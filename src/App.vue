@@ -23,3 +23,8 @@ export default {
   }),
 }
 </script>
+<style>
+.v-main {
+  padding-top: 0;
+}
+</style>
