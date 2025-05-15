@@ -14,9 +14,9 @@
       <img :src="logoSimple" alt="Logo B2 Engenharia e Construção" class="navbar-logo-s"/>
     </router-link>
     <router-link :to="linkHome.to" class="ml-8 d-none d-md-flex">
-      <img :src="logoComplete" alt="Logo B2 Engenharia e Construção" class="navbar-logo-c"/>
+      <img :src="logoComplete" alt="Logo B2 Engenharia e Construção" class="navbar-logo-c mr-16"/>
     </router-link>
-
+    
     <v-btn
       v-for="link in linksNavbar"
       :key="link.to"
@@ -65,8 +65,10 @@ const logoSimple = require('@/assets/logo/logob2-s.png')
 const logoComplete = require('@/assets/logo/logob2-c.png')
 
 const linksNavbar = [
-  { to: '/sobre', label: 'Sobre' },
-  { to: '/galeria', label: 'Galeria' }
+  { to: '/about', label: 'Quem somos' },
+  { to: '/services', label: 'Serviços' },
+  { to: '/partines', label: 'Parceiros' },
+  { to: '/galery', label: 'Portifólio' }
 ]
 const linkHome = {
   to: '/', label: 'Início'
