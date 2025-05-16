@@ -28,9 +28,9 @@
     </v-btn>
     <v-spacer></v-spacer>
     <v-btn
-    :to="linkContact.to"
+      :to="linkContact.to"
       text
-      class="d-md-flex mr-2 text-white"
+      class="d-md-flex mr-2 text-white btn-contact"
     >
       {{ linkContact.label }}
     </v-btn>
@@ -41,7 +41,10 @@
     temporary
     class="d-sm-md-none onRoll-nav-bar"
   >
-    <v-list>
+    <v-list class="mb-16">
+      <router-link :to="linkHome.to" class="ml-4 d-md-none">
+        <img :src="logoSimple" alt="Logo B2 Engenharia e Construção" class="navbar-logo-s"/>
+      </router-link>
       <v-list-item
         v-for="link in linksNavbar"
         :key="link.to"
@@ -50,6 +53,23 @@
         link
       >
         <v-list-item-title class="text-white">{{ link.label }}</v-list-item-title>
+      </v-list-item>
+    </v-list>
+    <v-btn
+      :to="linkContact.to"
+      text
+      class="d-md-flex ml-4 mb-16 "
+    >
+      {{ linkContact.label }}
+    </v-btn>
+    <v-list class="d-flex flex-row">
+      <v-list-item
+        v-for="social in socialIcons"
+        :key="social.icon"
+      >
+        <a :href="social.link" target="_blank" rel="noopener" class="text-white">
+          <v-icon size="32">{{ social.icon }}</v-icon>
+        </a>
       </v-list-item>
     </v-list>
   </v-navigation-drawer>
@@ -76,6 +96,24 @@ const linkHome = {
 const linkContact = {
   to: '/contact', label: 'Fale Conosco'
 }
+
+const socialIcons= [
+  {
+    icon: 'mdi-instagram',
+    alt: 'Logo do Instagram',
+    link: 'https://www.instagram.com/b2'
+  },
+  {
+    icon: 'mdi-facebook',
+    alt: 'Logo do Facebook',
+    link: 'https://www.facebook.com/b2'
+  },
+  {
+    icon: 'mdi-whatsapp',
+    alt: 'Logo do Whatsapp',
+    link: 'https://wa.me/+557199999999999'
+  }
+]
 
 // Detectar scroll
 const handleScroll = () => {
@@ -108,11 +146,16 @@ onUnmounted(() => {
   background: rgba(85, 4, 4, 1);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
   transition: background 0.3s ease-out;
+  transition: 0.2s ease-in-out;
 }
 .navbar-logo-s {
   max-width: 2.5rem;
 }
 .navbar-logo-c {
   max-width: 10rem;
+}
+.btn-contact {
+  border: solid 1px white;
+  background-color: rgba(245, 150, 8, 1);
 }
 </style>
