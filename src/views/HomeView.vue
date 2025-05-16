@@ -1,5 +1,6 @@
 <template>
   <v-carousel
+    v-model="currentSlide"
     cycle
     :interval="4000"
     :show-arrows="false"
@@ -12,11 +13,10 @@
       :src="image.path"
       cover
       class="zoom-in"
-    >
-      <v-container class="caption-container">
-        <h2 class="caption-text">{{ image.caption }}</h2>
-      </v-container>
-  </v-carousel-item>
+    />
+    <v-container class="caption-container">
+      <h2 class="caption-text">{{ images[currentSlide].caption }}</h2>
+    </v-container>
   </v-carousel>
   <div class="test">
     Body home
@@ -45,7 +45,8 @@ export default ({
         path: require('@/assets/carousel/home-img-4.jpg'),
         caption: 'Pioneirismo em cada detalhe'
       }
-    ]
+    ],
+    currentSlide: 0,
   }),
 });
 </script>
