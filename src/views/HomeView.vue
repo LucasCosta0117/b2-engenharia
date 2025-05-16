@@ -1,37 +1,54 @@
 <template>
-  <HelloWorld />
+  <v-carousel
+    cycle
+    :interval="3500"
+    :show-arrows="false"
+    delimiter-icon="mdi-square"
+    height="100vh"
+  >
+    <v-carousel-item
+      v-for="(image, i) in images"
+      :key="i"
+      :src="image"
+      cover
+      class="zoom-in"
+    >
+    </v-carousel-item>
+  </v-carousel>
+  <div class="test">
+    test
+  </div>
 </template>
 
 <script>
-import { defineComponent } from 'vue';
-
-// Components
-import HelloWorld from '../components/HelloWorld.vue';
-
-export default defineComponent({
+export default ({
   name: 'HomeView',
-
-  components: {
-    HelloWorld,
-  },
+  components: {},
+  data: () => ({
+    images: [
+      require('@/assets/carousel/home-img-1.jpg'),
+      require('@/assets/carousel/home-img-2.jpg'),
+      require('@/assets/carousel/home-img-3.jpg'),
+      require('@/assets/carousel/home-img-4.jpg')
+    ]
+  }),
 });
 </script>
 <style scoped>
-
-/* Pequenos dispositivos (celulares maiores e tablets, entre 481px e 767px) */
-@media (min-width: 481px) {
-
+.zoom-in {
+  animation: zoomIn 4s ease-in;
+  transition: transform 0.1s ease-in;
 }
-/* Dispositivos médios (tablets em retrato, entre 768px e 1023px) */
-@media (min-width: 768px) {
-
+.test {
+  height: 800px;
 }
-/* Dispositivos grandes (tablets em paisagem / laptops pequenos) */
-@media (min-width: 1024px) {
 
-}
-/* Telas grandes (desktops, TVs etc.) */
-@media (min-width: 1280px) {
-
+@keyframes zoomIn {
+  0% {
+    transform: scale(1) translateX(0);
+  }
+  100% {
+    transform: scale(1.05) translateX(-2%);
+  }
 }
 </style>
