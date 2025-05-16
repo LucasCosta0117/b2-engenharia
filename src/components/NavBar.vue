@@ -67,8 +67,8 @@
         v-for="social in socialIcons"
         :key="social.icon"
       >
-        <a :href="social.link" target="_blank" rel="noopener" class="text-white">
-          <v-icon size="32">{{ social.icon }}</v-icon>
+        <a :href="social.link" target="_blank">
+          <v-icon size="32" :icon="social.icon" color="white"/>
         </a>
       </v-list-item>
     </v-list>
