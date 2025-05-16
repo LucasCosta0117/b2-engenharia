@@ -22,7 +22,8 @@
       :key="link.to"
       :to="link.to"
       text
-      class="d-none d-md-flex text-white"
+      class="d-none d-md-flex text-white btn-nav-bar"
+      height="100%"
     >
       {{ link.label }}
     </v-btn>
@@ -157,5 +158,12 @@ onUnmounted(() => {
 .btn-contact {
   border: solid 1px white;
   background-color: rgba(245, 150, 8, 1);
+}
+.btn-contact:hover {
+  scale: 0.98;
+}
+.btn-nav-bar:hover {
+  border-bottom: solid 2px rgba(245, 150, 8, 1);
+  border-radius: 0px;
 }
 </style>
