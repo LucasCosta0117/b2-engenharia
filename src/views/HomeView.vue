@@ -1,7 +1,7 @@
 <template>
   <v-carousel
     cycle
-    :interval="3500"
+    :interval="4000"
     :show-arrows="false"
     delimiter-icon="mdi-square"
     height="100vh"
@@ -36,7 +36,7 @@ export default ({
 </script>
 <style scoped>
 .zoom-in {
-  animation: zoomIn 4s ease-in;
+  animation: zoomIn 4.5s ease-in;
   transition: transform 0.1s ease-in;
 }
 .test {
@@ -45,10 +45,10 @@ export default ({
 
 @keyframes zoomIn {
   0% {
-    transform: scale(1) translateX(0);
+    transform: scale(1) translateX(0) translateY(0);
   }
   100% {
-    transform: scale(1.05) translateX(-2%);
+    transform: scale(1.03) translateX(-1%) translateY(-1%);
   }
 }
 </style>
