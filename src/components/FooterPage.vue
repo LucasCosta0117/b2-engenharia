@@ -68,6 +68,6 @@ export default {
   background: linear-gradient(145deg, rgba(0, 0, 0, 1) 0%, rgba(110, 13, 13, 1) 100%);
 }
 .footer-logo {
-  height: 10rem;
+  height: 3.5rem;
 }
 </style>
