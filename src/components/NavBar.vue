@@ -23,6 +23,7 @@
       :to="link.to"
       text
       class="d-none d-md-flex text-white btn-nav-bar"
+      :class="{ 'btn-nav-bar-active': $route.path === link.to }"
       height="100%"
     >
       {{ link.label }}
@@ -51,6 +52,7 @@
         :key="link.to"
         :to="link.to"
         @click="drawer = false"
+        :class="{ 'btn-drawer-bar-active': $route.path === link.to }"
         link
       >
         <v-list-item-title class="text-white">{{ link.label }}</v-list-item-title>
@@ -164,7 +166,17 @@ onUnmounted(() => {
   scale: 0.98;
 }
 .btn-nav-bar:hover {
-  border-bottom: solid 2px rgba(245, 150, 8, 1);
+  border-top: solid 2px rgba(245, 150, 8, 1);
   border-radius: 0px;
 }
+.btn-nav-bar-active {
+  border-top: solid 2px rgba(245, 150, 8, 1);
+  border-radius: 0px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+  font-weight: 600;
+}
+.btn-drawer-bar-active {
+  text-shadow: 1px 2px 5px rgba(0, 0, 0, 0.6);
+}
+
 </style>
