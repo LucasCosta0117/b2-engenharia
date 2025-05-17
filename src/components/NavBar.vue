@@ -86,6 +86,7 @@ const logoSimple = require('@/assets/logo/logob2-s.png')
 const logoComplete = require('@/assets/logo/logob2-c.png')
 
 const linksNavbar = [
+  { to: '/', label: 'Início' },
   { to: '/about', label: 'Quem somos' },
   { to: '/services', label: 'Serviços' },
   { to: '/partines', label: 'Parceiros' },
