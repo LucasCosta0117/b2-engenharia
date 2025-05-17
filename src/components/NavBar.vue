@@ -89,8 +89,8 @@ const linksNavbar = [
   { to: '/', label: 'Início' },
   { to: '/about', label: 'Quem somos' },
   { to: '/services', label: 'Serviços' },
-  { to: '/partines', label: 'Parceiros' },
-  { to: '/galery', label: 'Portifólio' }
+  { to: '/partners', label: 'Parceiros' },
+  { to: '/gallery', label: 'Portifólio' }
 ]
 const linkHome = {
   to: '/', label: 'Início'
