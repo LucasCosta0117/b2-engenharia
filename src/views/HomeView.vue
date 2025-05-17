@@ -18,15 +18,16 @@
       <h2 class="caption-text">{{ images[currentSlide].caption }}</h2>
     </v-container>
   </v-carousel>
-  <div class="test">
-    Body home
-  </div>
+  <SiteUnderUpdate></SiteUnderUpdate>
 </template>
-
 <script>
+import SiteUnderUpdate from '@/components/SiteUnderUpdate.vue'
+
 export default ({
   name: 'HomeView',
-  components: {},
+  components: {
+    SiteUnderUpdate
+  },
   data: () => ({
     images: [
       {
