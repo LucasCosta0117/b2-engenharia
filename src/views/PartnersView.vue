@@ -18,7 +18,7 @@ export default {
     HeaderPage
   },
   data: () => ({
-    headerImage: require("@/assets/image/partners-header.jpg"),
+    headerImage: require("@/assets/image/partners-header.webp"),
     headerTitle: 'Parceiros comerciais'
   }),
 }

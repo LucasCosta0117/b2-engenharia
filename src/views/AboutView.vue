@@ -18,7 +18,7 @@ export default {
     HeaderPage
   },
   data: () => ({
-    headerImage: require("@/assets/image/about-header.jpg"),
+    headerImage: require("@/assets/image/about-header.webp"),
     headerTitle: 'Sobre a empresa'
   }),
 }

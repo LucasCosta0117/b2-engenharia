@@ -31,19 +31,19 @@ export default ({
   data: () => ({
     images: [
       {
-        path: require('@/assets/carousel/home-img-1.jpg'),
+        path: require('@/assets/carousel/home-img-1.webp'),
         caption: 'Viabilizando os seus sonhos'
       },
       {
-        path: require('@/assets/carousel/home-img-2.jpg'),
+        path: require('@/assets/carousel/home-img-2.webp'),
         caption: 'Construindo com integridade e inovação'
       },
       {
-        path: require('@/assets/carousel/home-img-3.jpg'),
+        path: require('@/assets/carousel/home-img-3.webp'),
         caption: 'Alcançando novos horizontes'
       },
       {
-        path: require('@/assets/carousel/home-img-4.jpg'),
+        path: require('@/assets/carousel/home-img-4.webp'),
         caption: 'Pioneirismo em cada detalhe'
       }
     ],

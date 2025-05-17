@@ -17,7 +17,7 @@ export default {
       type: String,
       require: true,
       default:() => {
-        return require("@/assets/image/partners-header.jpg")
+        return require("@/assets/image/partners-header.webp")
       }
     },
     headerTitle: {
