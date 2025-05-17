@@ -79,9 +79,6 @@ export default {
 }
 </script>
 <style scoped>
-.v-container {
-  height: 100vh;
-}
 .update-logo {
   height: 5rem;
 }
