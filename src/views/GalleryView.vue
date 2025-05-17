@@ -3,7 +3,7 @@
     :header-image="headerImage"
     :header-title="headerTitle"
   />
-  <v-container class="about-container">
+  <v-container class="gallery-container">
     <SiteUnderUpdate></SiteUnderUpdate>
   </v-container>
 </template>
@@ -12,14 +12,14 @@ import SiteUnderUpdate from '@/components/SiteUnderUpdate.vue';
 import HeaderPage from '@/components/HeaderPage.vue';
 
 export default {
-  name: 'AboutView',
+  name: 'GalleryView',
   components: {
     SiteUnderUpdate,
     HeaderPage
   },
   data: () => ({
-    headerImage: require("@/assets/image/about-header.jpg"),
-    headerTitle: 'Sobre a empresa'
+    headerImage: require("@/assets/image/gallery-header.jpg"),
+    headerTitle: 'Nossos empreendimentos'
   }),
 }
 </script>
