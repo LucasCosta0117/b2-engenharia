@@ -1,5 +1,5 @@
 <template>
-  <v-container app>
+  <v-container class="pt-16">
     <v-row>
       <v-col col="12">
         <v-img
@@ -81,7 +81,6 @@ export default {
 <style scoped>
 .v-container {
   height: 100vh;
-  padding-top: 80px;
 }
 .update-logo {
   height: 5rem;
