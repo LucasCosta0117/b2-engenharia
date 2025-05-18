@@ -3,7 +3,7 @@
     <v-row>
       <v-col col="12">
         <v-img
-          :src="logoSimple"
+          :src="logoOffice"
           class="update-logo"
         />
       </v-col>
@@ -23,7 +23,7 @@
       </v-col>
     </v-row>
     <v-row>
-      <v-col col="12" class="d-flex justify-center mb-16">
+      <v-col col="12" class="d-flex justify-center mb-8">
         <v-img 
           :src="excavatorGif"
           class="update-gif"
@@ -55,7 +55,7 @@
 export default {
   name: 'SiteUnderUpdate',
   data: () => ({
-    logoSimple: require('@/assets/logo/logob2-s.png'),
+    logoOffice: require('@/assets/logo/logob2-o.png'),
     excavatorGif: require('@/assets/gif/excavator.gif'),
     socialIcons: [
       {
@@ -80,14 +80,14 @@ export default {
 </script>
 <style scoped>
 .update-logo {
-  height: 5rem;
+  height: 7rem;
 }
 .update-title {
-  font-size: 1.5em;
+  font-size: 1.1em;
   font-weight: 800;
   text-align: center;
   text-transform: uppercase;
-  text-shadow: lightgray 2px 2px 3px;
+  text-shadow: lightgray 1px 1px 3px;
   color: rgb(90, 90, 90);
 }
 .update-subtitle {
@@ -97,7 +97,7 @@ export default {
   color: gray;
 }
 .update-gif {
-  height: 10rem;
+  height: 7rem;
 }
 .follow-midia {
   font-size: 1rem;
@@ -113,17 +113,16 @@ export default {
  */
 @media (min-width: 600px) {
   .update-logo {
-    height: 6rem;
+    height: 8rem;
   }
   .update-title {
-    font-size: 2em;
+    font-size: 1.2em;
   }
   .update-subtitle {
-    font-size: 1rem;
     max-width: 450px;
   }
   .update-gif {
-    height: 15rem;
+    height: 8rem;
   }
 }
 /**
@@ -131,11 +130,11 @@ export default {
  * Vuetify 'md' Break Point
  */
 @media (min-width: 960px) {
-  .update-title {
-    font-size: 2.5em;
+  .update-logo {
+    height: 10rem;
   }
-  .update-gif {
-    height: 16rem;
+  .update-title {
+    font-size: 1.3em;
   }
 }
 </style>
