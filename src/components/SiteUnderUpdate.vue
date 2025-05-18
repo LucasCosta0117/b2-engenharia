@@ -100,7 +100,6 @@ export default {
   text-transform: uppercase;
   text-shadow: lightgray 1px 1px 3px;
   color: rgb(113, 1, 1);
-  color: gray
 }
 .update-subtitle {
   font-size: 0.8rem;
