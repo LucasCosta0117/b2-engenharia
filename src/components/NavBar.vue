@@ -178,5 +178,4 @@ onUnmounted(() => {
 .btn-drawer-bar-active {
   text-shadow: 1px 2px 5px rgba(0, 0, 0, 0.6);
 }
-
 </style>
