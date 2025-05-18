@@ -2,7 +2,7 @@
   <v-app-bar
     v-if="!drawer"
     flat
-    :height="[scrolled ? 64 : 80 ]"
+    :height="scrolled ? 64 : 80 "
     :class="[scrolled ? 'onRoll-nav-bar' : 'onTop-nav-bar']"
   >
     <v-app-bar-nav-icon
@@ -66,20 +66,14 @@
       {{ linkContact.label }}
     </v-btn>
     <v-list class="d-flex flex-row">
-      <v-list-item
-        v-for="social in socialIcons"
-        :key="social.icon"
-      >
-        <a :href="social.link" target="_blank">
-          <v-icon size="32" :icon="social.icon" color="white"/>
-        </a>
-      </v-list-item>
+      <SocialMidiaList></SocialMidiaList>
     </v-list>
   </v-navigation-drawer>
 </template>
 
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
+import SocialMidiaList from '@/components/SocialMidiaList.vue'
 
 const drawer = ref(false)
 const scrolled = ref(false)
@@ -100,24 +94,6 @@ const linkHome = {
 const linkContact = {
   to: '/contact', label: 'Fale Conosco'
 }
-
-const socialIcons= [
-  {
-    icon: 'mdi-instagram',
-    alt: 'Logo do Instagram',
-    link: 'https://www.instagram.com/b2'
-  },
-  {
-    icon: 'mdi-facebook',
-    alt: 'Logo do Facebook',
-    link: 'https://www.facebook.com/b2'
-  },
-  {
-    icon: 'mdi-whatsapp',
-    alt: 'Logo do Whatsapp',
-    link: 'https://wa.me/+557199999999999'
-  }
-]
 
 // Detectar scroll
 const handleScroll = () => {

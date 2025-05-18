@@ -6,7 +6,7 @@
           <img :src="logoComplete" alt="Logo B2 Engenharia e Construção" class="footer-logo"/>
           <div>
             <v-icon size="18" icon="mdi-phone-dial"></v-icon>
-            <span class="text-caption"> +55 71 99114-2188</span>
+            <span class="text-caption"> +55 71 99728-4770</span>
           </div>
           <div>
             <v-icon size="18" icon="mdi-email"></v-icon>
@@ -22,16 +22,7 @@
         <span class="d-none d-sm-flex follow-midia">
           Siga para saber mais
         </span>
-        <v-list class="d-flex flex-row bg-transparent">
-          <v-list-item
-            v-for="social in socialIcons"
-            :key="social.icon"
-          >
-            <a :href="social.link" target="_blank">
-              <v-icon size="32" :icon="social.icon" color="white"/>
-            </a>
-          </v-list-item>
-        </v-list>
+        <SocialMidiaList></SocialMidiaList>
       </div>
     </v-col>
     <v-col class="footer-copyright">
@@ -45,29 +36,17 @@
   </v-footer>
 </template>
 <script>
+import SocialMidiaList from '@/components/SocialMidiaList.vue'
+
 export default {
   name: 'FooterPage',
+  components: {
+    SocialMidiaList
+  },
   data:() => ({
     logoComplete: require('@/assets/logo/logob2-c.png'),
-    portfolioLink: 'https://github.com/LucasCosta0117',
-    socialIcons: [
-      {
-        icon: 'mdi-instagram',
-        alt: 'Logo do Instagram',
-        link: 'https://www.instagram.com/b2'
-      },
-      {
-        icon: 'mdi-facebook',
-        alt: 'Logo do Facebook',
-        link: 'https://www.facebook.com/b2'
-      },
-      {
-        icon: 'mdi-whatsapp',
-        alt: 'Logo do Whatsapp',
-        link: 'https://wa.me/+557199999999999'
-      }
-    ]
-  }),
+    portfolioLink: 'https://github.com/LucasCosta0117'
+  })
 }
 </script>
 <style scoped>

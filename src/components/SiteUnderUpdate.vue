@@ -56,43 +56,22 @@
         </span>
       </v-col>
       <v-col col="12" class="d-flex justify-center text-center pt-0">
-        <v-list class="d-flex flex-row">
-          <v-list-item
-            v-for="social in socialIcons"
-            :key="social.icon"
-          >
-            <a :href="social.link" target="_blank">
-              <v-icon size="36" :icon="social.icon" color="black"/>
-            </a>
-          </v-list-item>
-        </v-list>
+        <SocialMidiaList sizeIcon="36" colorIcon="#3C3C3C"></SocialMidiaList>
       </v-col>
     </v-row>
   </v-container>
 </template>
 <script>
+import SocialMidiaList from '@/components/SocialMidiaList.vue'
+
 export default {
   name: 'SiteUnderUpdate',
+  components: {
+    SocialMidiaList
+  },
   data: () => ({
     logoOffice: require('@/assets/logo/logob2-o.png'),
     excavatorGif: require('@/assets/gif/excavator.gif'),
-    socialIcons: [
-      {
-        icon: 'mdi-instagram',
-        alt: 'Logo do Instagram',
-        link: 'https://www.instagram.com/b2'
-      },
-      {
-        icon: 'mdi-facebook',
-        alt: 'Logo do Facebook',
-        link: 'https://www.facebook.com/b2'
-      },
-      {
-        icon: 'mdi-whatsapp',
-        alt: 'Logo do Whatsapp',
-        link: 'https://wa.me/+557199999999999'
-      }
-    ],
     ventures: [
       {
         image: require('@/assets/logo/logo-ilheus-select.png'),
@@ -121,6 +100,7 @@ export default {
   text-transform: uppercase;
   text-shadow: lightgray 1px 1px 3px;
   color: rgb(113, 1, 1);
+  color: gray
 }
 .update-subtitle {
   font-size: 0.8rem;
