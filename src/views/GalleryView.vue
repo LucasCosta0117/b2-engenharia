@@ -4,18 +4,18 @@
     :header-title="headerTitle"
   />
   <v-container class="gallery-container">
-    <SiteUnderUpdate></SiteUnderUpdate>
+     <CardGallery v-for="i in 2" :key="i"></CardGallery>
   </v-container>
 </template>
 <script>
-import SiteUnderUpdate from '@/components/SiteUnderUpdate.vue';
 import HeaderPage from '@/components/HeaderPage.vue';
+import CardGallery from '@/components/CardGallery.vue';
 
 export default {
   name: 'GalleryView',
   components: {
-    SiteUnderUpdate,
-    HeaderPage
+    HeaderPage,
+    CardGallery
   },
   data: () => ({
     headerImage: require("@/assets/image/gallery-header.webp"),
@@ -24,4 +24,9 @@ export default {
 }
 </script>
 <style scoped>
+.gallery-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
 </style>
