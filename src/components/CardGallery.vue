@@ -97,6 +97,7 @@ export default {
   transition: transform 2s ease;
 }
 .card-container:hover .card-thumb-img {
+  height: 21rem;
   transform: scale(1.1);
 }
 .card-features {
@@ -109,5 +110,25 @@ export default {
   align-items: center;
   gap: 0.25rem;
   font-size: 0.8rem;
+}
+
+/**
+ * Pequenos dispositivos
+ * Vuetify 'sm' Break Point
+ */
+@media (min-width: 600px) {
+  .card-container {
+    width: 48%;
+  }
+}
+
+/**
+ * Dispositivos médios/grandes
+ * Vuetify 'md' Break Point
+ */
+@media (min-width: 960px) {
+  .card-container {
+    width: 32%;
+  }
 }
 </style>
