@@ -58,15 +58,15 @@ export default {
   .header-title {
     font-size: 1.75rem;
   }
+  .header-title {
+    top: 55%;
+  }
 }
 /**
  * Dispositivos médios/grandes
  * Vuetify 'md' Break Point
  */
 @media (min-width: 960px) {
-  .header-image {
-    height: 30rem;
-  }
   .header-title {
     font-size: 2rem;
   }
