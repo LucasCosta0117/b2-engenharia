@@ -58,15 +58,25 @@ export default {
   height: 25rem;
 }
 .card-title {
-  background-color: rgb(85, 4, 4);
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.8);
   color: white;
-  font-weight: 600;
-  font-size: 1.1rem;
+  font-weight: 400;
+  font-size: 1.25rem;
   text-transform: uppercase;
   writing-mode: sideways-lr;
-  padding: 1.5rem;
+  padding: 2rem;
   margin-bottom: 1rem;
   width: 30%;
+  transition: all 0.5s ease;
+}
+.card-container:hover .card-title {
+  background: linear-gradient(45deg, rgba(0, 0, 0, 1) 0%, rgba(110, 13, 13, 1) 100%);
+  margin-bottom: 0;
+  font-weight: 600;
+  width: 20%;
 }
 .card-info {
   display: flex;
@@ -75,11 +85,19 @@ export default {
   width: 70%;
   background: linear-gradient(75deg, rgb(255, 255, 255) 0%, rgb(221, 217, 217) 100%);
 }
+.card-container:hover .card-info {
+  margin-bottom: 0;
+  width: 80%;
+}
 .card-thumb {
-
+  overflow: hidden;
 }
 .card-thumb-img {
   height: 19rem;
+  transition: transform 2s ease;
+}
+.card-container:hover .card-thumb-img {
+  transform: scale(1.1);
 }
 .card-features {
   display: flex;
