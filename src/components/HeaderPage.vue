@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="header-container">
     <v-img
       :src="headerImage"
       cover
@@ -32,13 +32,16 @@ export default {
 }
 </script>
 <style scoped>
+.header-container {
+  position: relative;
+}
 .header-image {
   height: 20rem;
   box-shadow: 0px 1px 5px rgb(60, 60, 60);
 }
 .header-title {
   position: absolute;
-  top: 15%;
+  top: 65%;
   left: 5%;
   text-align: left;
   text-transform: uppercase;
@@ -47,15 +50,13 @@ export default {
   max-width: 10rem;
 }
 
-
 /**
  * Pequenos dispositivos
  * Vuetify 'sm' Break Point
  */
 @media (min-width: 600px) {
   .header-title {
-    font-size: 2rem;
-    top: 12%;
+    font-size: 1.75rem;
   }
 }
 /**
@@ -67,9 +68,7 @@ export default {
     height: 30rem;
   }
   .header-title {
-    font-size: 2.5rem;
-    top: 20%;
-    max-width: 15rem;
+    font-size: 2rem;
   }
 }
 </style>
