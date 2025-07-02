@@ -53,11 +53,18 @@ export default {
  * Vuetify 'md' Break Point
  */
 @media (min-width: 960px) {
-  .gallery-container {
-    max-width: 1300px;
-  }
   .card-gallery-container {
     gap: 3rem;
+  }
+}
+
+/**
+ * Dispositivos grandes
+ * Vuetify 'lg' Break Point
+ */
+@media (min-width: 1264px) {
+  .gallery-container {
+    max-width: 1300px;
   }
 }
 </style>
