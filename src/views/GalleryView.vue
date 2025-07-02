@@ -4,9 +4,7 @@
     :header-title="headerTitle"
   />
   <v-container class="gallery-container">
-    <span class="gallery-title">
-      Galeria
-    </span>
+    <SessionTitle :title="'Galeria'"></SessionTitle>
     <div class="card-gallery-container">
       <CardGallery v-for="i in 8" :key="i"></CardGallery>
     </div>
@@ -15,12 +13,14 @@
 <script>
 import HeaderPage from '@/components/HeaderPage.vue';
 import CardGallery from '@/components/CardGallery.vue';
+import SessionTitle from '@/components/SessionTitle .vue';
 
 export default {
   name: 'GalleryView',
   components: {
     HeaderPage,
-    CardGallery
+    CardGallery,
+    SessionTitle
   },
   data: () => ({
     headerImage: require("@/assets/image/gallery-header.webp"),
@@ -34,13 +34,6 @@ export default {
   flex-direction: column;
   gap: 1rem;
 }
-.gallery-title {
-  text-transform: uppercase;
-  font-size: 1.25rem;
-  border-bottom: solid goldenrod 1px;
-  margin: 1rem 2rem;
-  font-weight: 300;
-}
 
 /**
  * Pequenos dispositivos
@@ -52,10 +45,6 @@ export default {
     flex-direction: row;
     flex-wrap: wrap;
     gap: 2rem;
-  }
-  .gallery-title {
-    font-size: 1.5rem;
-    margin: 1.5rem 2rem;
   }
 }
 
@@ -69,9 +58,6 @@ export default {
   }
   .card-gallery-container {
     gap: 3rem;
-  }
-  .gallery-title {
-    margin: 3rem 2rem;
   }
 }
 </style>

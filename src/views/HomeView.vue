@@ -18,15 +18,20 @@
       <h2 class="caption-text">{{ images[currentSlide].caption }}</h2>
     </v-container>
   </v-carousel>
+  <v-container>
+    <SessionTitle :title="'A Empresa'"></SessionTitle>
+  </v-container>
   <SiteUnderUpdate></SiteUnderUpdate>
 </template>
 <script>
 import SiteUnderUpdate from '@/components/SiteUnderUpdate.vue'
+import SessionTitle from '@/components/SessionTitle .vue';
 
 export default ({
   name: 'HomeView',
   components: {
-    SiteUnderUpdate
+    SiteUnderUpdate,
+    SessionTitle
   },
   data: () => ({
     images: [
