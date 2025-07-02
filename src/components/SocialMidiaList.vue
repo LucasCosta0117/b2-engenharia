@@ -23,8 +23,8 @@ export default {
      * Define o tamanho do icone pela prop 'size'
      */
     sizeIcon: {
-      type: Number,
-      default: 32
+      type: String,
+      default: '32'
     },
     /**
      * Define a cor do icone pela prop 'color'
