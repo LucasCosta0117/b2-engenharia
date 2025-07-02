@@ -56,12 +56,13 @@ export default {
 .card-container {
   display: flex;
   height: 25rem;
+  border-radius: 1rem;
 }
 .card-title {
   display: flex;
   justify-content: start;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.5);
   color: white;
   font-weight: 400;
   font-size: 1.25rem;
@@ -69,25 +70,25 @@ export default {
   writing-mode: sideways-lr;
   padding: 2rem;
   margin-bottom: 1rem;
-  width: 30%;
+  width: 20%;
   transition: all 0.5s ease;
 }
 .card-container:hover .card-title {
   background: linear-gradient(45deg, rgba(0, 0, 0, 1) 0%, rgba(110, 13, 13, 1) 100%);
   margin-bottom: 0;
   font-weight: 600;
-  width: 20%;
+  width: 15%;
 }
 .card-info {
   display: flex;
   flex-direction: column;
   margin-bottom: 1rem;
-  width: 70%;
-  background: linear-gradient(75deg, rgb(255, 255, 255) 0%, rgb(221, 217, 217) 100%);
+  width: 80%;
+  background: linear-gradient(75deg, rgb(255, 255, 255) 0%, rgb(226, 225, 225) 100%);
 }
 .card-container:hover .card-info {
   margin-bottom: 0;
-  width: 80%;
+  width: 85%;
 }
 .card-thumb {
   overflow: hidden;
@@ -118,7 +119,7 @@ export default {
  */
 @media (min-width: 600px) {
   .card-container {
-    width: 48%;
+    width: 47.5%;
   }
 }
 
@@ -128,7 +129,7 @@ export default {
  */
 @media (min-width: 960px) {
   .card-container {
-    width: 32%;
+    width: 30.5%;
   }
 }
 </style>
