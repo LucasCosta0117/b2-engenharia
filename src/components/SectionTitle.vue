@@ -1,5 +1,5 @@
 <template>
-  <div class="session-title">
+  <div class="section-title">
     {{ title }}
   </div>
 </template>
@@ -8,7 +8,7 @@
  * Componente responsável por padronizar os títulos das sessões na aplicação.
  */
 export default {
-  name: 'SessionTitle',
+  name: 'SectionTitle',
   props: {
     /**
      * Define a string utilizada como Título.
@@ -23,7 +23,7 @@ export default {
 }
 </script>
 <style scoped>
-.session-title {
+.section-title {
   color: black;
   text-transform: uppercase;
   font-size: 1.25rem;
@@ -37,7 +37,7 @@ export default {
  * Vuetify 'sm' Break Point
  */
 @media (min-width: 600px) {
-  .session-title {
+  .section-title {
     font-size: 1.5rem;
     margin: 1.5rem 2rem;
   }
@@ -47,7 +47,7 @@ export default {
  * Vuetify 'md' Break Point
  */
 @media (min-width: 960px) {
-  .session-title {
+  .section-title {
     margin: 3rem 2rem;
   }
 }

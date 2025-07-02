@@ -19,19 +19,19 @@
     </v-container>
   </v-carousel>
   <v-container>
-    <SessionTitle :title="'A Empresa'"></SessionTitle>
+    <SectionTitle :title="'A Empresa'"></SectionTitle>
+    <section>
+
+    </section>
   </v-container>
-  <SiteUnderUpdate></SiteUnderUpdate>
 </template>
 <script>
-import SiteUnderUpdate from '@/components/SiteUnderUpdate.vue'
-import SessionTitle from '@/components/SessionTitle .vue';
+import SectionTitle from '@/components/SectionTitle.vue';
 
 export default ({
   name: 'HomeView',
   components: {
-    SiteUnderUpdate,
-    SessionTitle
+    SectionTitle
   },
   data: () => ({
     images: [

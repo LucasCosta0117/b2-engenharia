@@ -4,7 +4,7 @@
     :header-title="headerTitle"
   />
   <v-container class="gallery-container">
-    <SessionTitle :title="'Galeria'"></SessionTitle>
+    <SectionTitle :title="'Galeria'"></SectionTitle>
     <div class="card-gallery-container">
       <CardGallery v-for="i in 8" :key="i"></CardGallery>
     </div>
@@ -13,14 +13,14 @@
 <script>
 import HeaderPage from '@/components/HeaderPage.vue';
 import CardGallery from '@/components/CardGallery.vue';
-import SessionTitle from '@/components/SessionTitle .vue';
+import SectionTitle from '@/components/SectionTitle.vue';
 
 export default {
   name: 'GalleryView',
   components: {
     HeaderPage,
     CardGallery,
-    SessionTitle
+    SectionTitle
   },
   data: () => ({
     headerImage: require("@/assets/image/gallery-header.webp"),
