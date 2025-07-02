@@ -1,27 +1,30 @@
 <template>
-  <v-carousel
-    v-model="currentSlide"
-    cycle
-    :interval="4000"
-    :show-arrows="false"
-    delimiter-icon="mdi-square"
-    height="100vh"
-  >
-    <v-carousel-item
-      v-for="(image, i) in images"
-      :key="i"
-      :src="image.path"
-      cover
-      class="zoom-in"
-    />
+  <v-carousel v-model="currentSlide" cycle :interval="4000" :show-arrows="false" delimiter-icon="mdi-square"
+    height="100vh">
+    <v-carousel-item v-for="(image, i) in images" :key="i" :src="image.path" cover class="zoom-in" />
     <v-container class="caption-container">
       <h2 class="caption-text">{{ images[currentSlide].caption }}</h2>
     </v-container>
   </v-carousel>
-  <v-container>
+  <v-container class="home-container">
     <SectionTitle :title="'A Empresa'"></SectionTitle>
-    <section>
-
+    <section class="home-section">
+      <div>
+        A B2 Engenharia & Construção é uma empresa que nasceu com o intuito de viabilizar empreendimentos a partir do
+        pleno entendimento do cenário de mercado e das variáveis que vão garantir o seu sucesso. Deste modo, sempre
+        respeitando o sonho dos nossos parceiros, buscamos influenciá-los de forma sustentável, com base na experiência
+        dos nossos profissionais nas mais variadas obras de grande porte.
+      </div>
+      <div>
+        Um dos focos da nossa atuação é a Incorporação Imobiliária para projetos comerciais e residenciais, desde a fase
+        de concepção e aprovação, até a execução. Para projetos que dependem de recursos financeiros, fazemos toda a
+        captação para garantir a implantação do empreendimento.
+      </div>
+      <div>
+        A B2 conta com seu conhecimento do mercado para desenvolver projetos inteligentes e sob medida para os diversos
+        públicos e regiões, pautada sempre em sua política de Compliance e atuando com uma gestão ativa nos
+        empreendimentos, a fim de mitigar os riscos e maximizar os ganhos.
+      </div>
     </section>
   </v-container>
 </template>
@@ -75,7 +78,13 @@ export default ({
   text-align: left;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
-
+.home-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  font-size: 1rem;
+}
 /**
  * Pequenos dispositivos
  * Vuetify 'sm' Break Point
@@ -104,6 +113,16 @@ export default ({
   }
   .caption-text {
     font-size: 3.5rem;
+  }
+}
+
+/**
+ * Dispositivos grandes
+ * Vuetify 'lg' Break Point
+ */
+@media (min-width: 1264px) {
+  .home-container {
+    max-width: 1300px;
   }
 }
 
