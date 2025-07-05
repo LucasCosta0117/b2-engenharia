@@ -1,0 +1,77 @@
+<template>
+  <v-container class="section-container">
+    <SectionTitle 
+      :main-title="sectionContent.mainTitle"
+      :sub-title="sectionContent.subTitle"
+    />
+    <div class="section-paragraph">
+      <p v-for="paragraph in sectionContent.paragraphs" :key="paragraph">
+        {{ paragraph }}
+      </p>
+    </div>
+  </v-container>
+</template>
+<script>
+import SectionTitle from './SectionTitle.vue';
+/**
+ * Componente responsável por padronizar as seções de conteúdo dentro do site,
+ * organizando titulo, subtitulo e parágráfos.
+ */
+export default {
+  name: 'SectionContainer',
+  components: {
+    SectionTitle,
+  },
+  props: {
+    /**
+     * Contem os elementos responsáveis pelo conteúdo da seção.
+     */
+    sectionContent: {
+      type: Object,
+      required: true
+    }
+  },
+  data() {
+    return {
+
+    }
+  }
+}
+</script>
+<style scoped>
+.section-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.section-paragraph {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-size: 1rem;
+  text-align: justify;
+  text-indent: 1rem;
+}
+
+/**
+ * Pequenos dispositivos
+ * Vuetify 'sm' Break Point
+ */
+@media (min-width: 600px) {
+
+}
+/**
+ * Dispositivos médios
+ * Vuetify 'md' Break Point
+ */
+@media (min-width: 960px) {
+
+}
+/**
+ * Dispositivos grandes
+ * Vuetify 'lg' Break Point
+ */
+@media (min-width: 1264px) {
+
+}
+</style>

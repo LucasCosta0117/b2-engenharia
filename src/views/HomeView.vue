@@ -6,35 +6,33 @@
       <h2 class="caption-text">{{ images[currentSlide].caption }}</h2>
     </v-container>
   </v-carousel>
-  <v-container class="home-container">
-    <SectionTitle :title="'A Empresa'"></SectionTitle>
-    <section class="home-section">
-      <div>
-        A B2 Engenharia & Construção é uma empresa que nasceu com o intuito de viabilizar empreendimentos a partir do
-        pleno entendimento do cenário de mercado e das variáveis que vão garantir o seu sucesso. Deste modo, sempre
-        respeitando o sonho dos nossos parceiros, buscamos influenciá-los de forma sustentável, com base na experiência
-        dos nossos profissionais nas mais variadas obras de grande porte.
-      </div>
-      <div>
-        Um dos focos da nossa atuação é a Incorporação Imobiliária para projetos comerciais e residenciais, desde a fase
-        de concepção e aprovação, até a execução. Para projetos que dependem de recursos financeiros, fazemos toda a
-        captação para garantir a implantação do empreendimento.
-      </div>
-      <div>
-        A B2 conta com seu conhecimento do mercado para desenvolver projetos inteligentes e sob medida para os diversos
-        públicos e regiões, pautada sempre em sua política de Compliance e atuando com uma gestão ativa nos
-        empreendimentos, a fim de mitigar os riscos e maximizar os ganhos.
-      </div>
+  <div class="home-container">
+    <section class="home-section-company">
+      <SectionContainer :section-content="sectionsContent['company']" />
     </section>
-  </v-container>
+    <section class="home-section-services">
+      <SectionContainer :section-content="sectionsContent['services']" />
+        <ul>
+          <li v-for="x in 5" :key="x">
+            test_{{ x }}
+          </li>
+        </ul>
+    </section>
+    <section class="home-section-compliance">
+      <SectionContainer :section-content="sectionsContent['compliance']" />
+    </section>
+  </div>
 </template>
 <script>
-import SectionTitle from '@/components/SectionTitle.vue';
+import SectionContainer from '@/components/SectionContainer.vue';
 
+/**
+ * Página principal de apresentação do site.
+ */
 export default ({
   name: 'HomeView',
   components: {
-    SectionTitle
+    SectionContainer
   },
   data: () => ({
     images: [
@@ -56,6 +54,44 @@ export default ({
       }
     ],
     currentSlide: 0,
+    sectionsContent: {
+      'company': {
+        mainTitle: 'A Empresa',
+        subTitle: 'B2 Engenharia & Construção',
+        paragraphs: [
+          'A B2 Engenharia e Construção nasceu com o propósito de viabilizar empreendimentos por meio de uma compreensão'+
+          'aprofundada do mercado e das variáveis determinantes para o sucesso de cada projeto.Com respeito aos sonhos'+
+          'de nossos parceiros, atuamos de forma sustentável, apoiados na ampla experiência de nossos profissionais em'+
+          'obras de grande porte.',
+
+          'Nosso trabalho é fortemente voltado para a Incorporação Imobiliária, tanto em projetos comerciais quanto'+
+          'residenciais. Atuamos desde a concepção e aprovação até a execução completa do empreendimento. Para'+
+          'iniciativas que exigem aporte financeiro, realizamos toda a captação de recursos necessária para viabilizar sua implantação.',
+
+          'Com profundo conhecimento do setor, a B2 desenvolve soluções inteligentes e personalizadas para diferentes'+
+          'perfis de público e regiões. Seguimos rigorosamente nossa política de Compliance e mantemos uma gestão ativa'+
+          'nos empreendimentos, com o objetivo de mitigar riscos e potencializar os resultados.'
+        ]
+      },
+      'services': {
+        mainTitle: 'Nossos Serviços',
+        subTitle: 'Engenharia de qualidade',
+        paragraphs: []
+      },
+      'compliance': {
+        mainTitle: 'Compliance',
+        subTitle: 'Ética e Conformidade',
+        paragraphs: [
+          'A política de Compliance da B2 Engenharia & Construção está fundamentada no rigoroso cumprimento das normas'+
+          'e legislações vigentes. Esse compromisso abrange todas as áreas da empresa, incluindo segurança do trabalho,'+
+          'operações, contabilidade, fiscal, questões trabalhistas e responsabilidade socioambiental.',
+
+          'Como parte das ações preventivas e de monitoramento, a B2 disponibiliza seu Código de Ética e Conduta,'+
+          'oferecendo um canal de comunicação direto e transparente. Esse canal é acessível a todos que se relacionam com'+
+          'a empresa, seja de forma direta ou indireta — como colaboradores, subcontratados, parceiros, clientes e demais partes interessadas.'
+        ]
+      },
+    }
   }),
 });
 </script>
@@ -78,12 +114,9 @@ export default ({
   text-align: left;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
-.home-section {
+.home-container {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  margin-top: 2rem;
-  font-size: 1rem;
 }
 /**
  * Pequenos dispositivos
@@ -101,7 +134,7 @@ export default ({
   }
 }
 /**
- * Dispositivos médios/grandes
+ * Dispositivos médios
  * Vuetify 'md' Break Point
  */
 @media (min-width: 960px) {
