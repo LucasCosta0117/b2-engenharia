@@ -12,11 +12,13 @@
     </section>
     <section class="home-section-services">
       <SectionContainer :section-content="sectionsContent['services']" />
-        <ul>
-          <li v-for="x in 5" :key="x">
-            test_{{ x }}
-          </li>
-        </ul>
+      <div class="card-services">
+        <CardItem
+          v-for="serv in listServices" :key="serv.title"
+          :card-title="serv.title"
+          :card-text="serv.text"
+        />
+      </div>
     </section>
     <section class="home-section-compliance">
       <SectionContainer :section-content="sectionsContent['compliance']" />
@@ -24,6 +26,7 @@
   </div>
 </template>
 <script>
+import CardItem from '@/components/CardItem.vue';
 import SectionContainer from '@/components/SectionContainer.vue';
 
 /**
@@ -32,6 +35,7 @@ import SectionContainer from '@/components/SectionContainer.vue';
 export default ({
   name: 'HomeView',
   components: {
+    CardItem,
     SectionContainer
   },
   data: () => ({
@@ -91,7 +95,41 @@ export default ({
           'a empresa, seja de forma direta ou indireta — como colaboradores, subcontratados, parceiros, clientes e demais partes interessadas.'
         ]
       },
-    }
+    },
+    listServices: [
+      {
+        'title': 'Loteamento aberto e fechado',
+        'text': 'Planejamento, aprovação e execução de loteamentos com foco em mobilidade, segurança e infraestrutura de qualidade.',
+      },
+      {
+        'title': 'Desenvolvimento Imobiliário',
+        'text': 'Gestão completa de empreendimentos, desde a viabilidade até a comercialização, com análise estratégica do mercado.',
+      },
+      {
+        'title': 'Estruturação de Operações Financeiras',
+        'text': 'Captação e estruturação de recursos financeiros para viabilização e alavancagem de projetos imobiliários e de infraestrutura.',
+      },
+      {
+        'title': 'Edificações horizontais e verticais',
+        'text': 'Construção de residenciais, comerciais e corporativos com soluções técnicas eficientes e alto padrão construtivo.',
+      },
+      {
+        'title': 'Usinas Solares',
+        'text': 'Implantação de usinas fotovoltaicas com foco em eficiência energética e retorno sustentável para investidores e parceiros.',
+      },
+      {
+        'title': 'Retrofit de Edificações',
+        'text': 'Requalificação de imóveis com foco na valorização patrimonial, eficiência operacional e adequação às normas atuais.',
+      },
+      {
+        'title': 'Infraestrutura',
+        'text': 'Execução de obras de infraestrutura urbana e industrial, com foco em durabilidade, funcionalidade e responsabilidade ambiental.',
+      },
+      {
+        'title': 'Galpões Logísticos',
+        'text': 'Projetos e construção de centros logísticos otimizados, com alto desempenho operacional e adaptabilidade às demandas do setor.',
+      }
+    ]
   }),
 });
 </script>
@@ -118,6 +156,18 @@ export default ({
   display: flex;
   flex-direction: column;
 }
+.home-section-services {
+  background: radial-gradient(circle, rgb(80, 10, 10) 0%, rgba(0, 0, 0, 1) 100%);
+  padding-bottom: 2rem;
+  color: white;
+}
+.card-services {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 0rem 1rem;
+}
+
 /**
  * Pequenos dispositivos
  * Vuetify 'sm' Break Point
