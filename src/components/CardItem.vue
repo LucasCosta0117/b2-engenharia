@@ -38,7 +38,7 @@ export default {
 </script>
 <style scoped>
 .card-item-container {
-  height: 8.5rem;
+  height: 10rem;
 }
 .card-item-dash {
   margin-bottom: 1rem;
@@ -47,5 +47,27 @@ export default {
 }
 .card-item-title {
   font-size: 1rem;
+}
+
+/**
+ * Pequenos dispositivos
+ * Vuetify 'sm' Break Point
+ */
+@media (min-width: 600px) {
+
+}
+/**
+ * Dispositivos médios
+ * Vuetify 'md' Break Point
+ */
+@media (min-width: 960px) {
+
+}
+/**
+ * Dispositivos grandes
+ * Vuetify 'lg' Break Point
+ */
+@media (min-width: 1264px) {
+
 }
 </style>
