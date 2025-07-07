@@ -29,11 +29,15 @@
         <CardGallery v-for="i in 2" :key="i"></CardGallery>
       </div>
     </section>
+    <section class="home-section-releases">
+      <ContactForm/>
+    </section>
   </div>
 </template>
 <script>
 import CardGallery from '@/components/CardGallery.vue';
 import CardItem from '@/components/CardItem.vue';
+import ContactForm from '@/components/ContactForm.vue';
 import SectionContainer from '@/components/SectionContainer.vue';
 
 /**
@@ -44,6 +48,7 @@ export default ({
   components: {
     CardGallery,
     CardItem,
+    ContactForm,
     SectionContainer
   },
   data: () => ({
