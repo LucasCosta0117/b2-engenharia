@@ -23,9 +23,16 @@
     <section class="home-section-compliance">
       <SectionContainer :section-content="sectionsContent['compliance']" />
     </section>
+    <section class="home-section-releases">
+      <SectionContainer :section-content="sectionsContent['releases']" />
+      <div class="releases-gallery">
+        <CardGallery v-for="i in 2" :key="i"></CardGallery>
+      </div>
+    </section>
   </div>
 </template>
 <script>
+import CardGallery from '@/components/CardGallery.vue';
 import CardItem from '@/components/CardItem.vue';
 import SectionContainer from '@/components/SectionContainer.vue';
 
@@ -35,6 +42,7 @@ import SectionContainer from '@/components/SectionContainer.vue';
 export default ({
   name: 'HomeView',
   components: {
+    CardGallery,
     CardItem,
     SectionContainer
   },
@@ -93,6 +101,15 @@ export default ({
           'Como parte das ações preventivas e de monitoramento, a B2 disponibiliza seu Código de Ética e Conduta,'+
           'oferecendo um canal de comunicação direto e transparente. Esse canal é acessível a todos que se relacionam com'+
           'a empresa, seja de forma direta ou indireta — como colaboradores, subcontratados, parceiros, clientes e demais partes interessadas.'
+        ]
+      },
+      'releases': {
+        mainTitle: 'Lançamentos',
+        subTitle: 'Empreendimentos em foco',
+        paragraphs: [
+          'Conheça os empreendimentos mais recentes desenvolvidos pela B2 Engenharia & Construção,'+
+          ' que refletem nosso compromisso com a qualidade, inovação e eficiência.'+
+          ' Para explorar o portfólio completo de obras e projetos, acesse a aba "Empreendimentos".'
         ]
       },
     },
@@ -166,6 +183,15 @@ export default ({
   flex-direction: column;
   gap: 0.5rem;
   margin: 0rem 1rem;
+}
+.releases-gallery {
+  display: flex;
+  flex-direction: column;
+  margin: 0rem 1rem;
+  gap: 0.5rem;
+}
+.home-section-releases {
+  padding-bottom: 1rem;
 }
 
 /**
