@@ -1,15 +1,15 @@
 <template>
-  <v-container class="section-container">
+  <div class="section-container">
     <SectionTitle 
       :main-title="sectionContent.mainTitle"
       :sub-title="sectionContent.subTitle"
     />
-    <div class="section-paragraph">
+    <div v-if="sectionContent.paragraphs.length > 0" class="section-paragraph">
       <p v-for="paragraph in sectionContent.paragraphs" :key="paragraph">
         {{ paragraph }}
       </p>
     </div>
-  </v-container>
+  </div>
 </template>
 <script>
 import SectionTitle from './SectionTitle.vue';
@@ -43,6 +43,7 @@ export default {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  margin: 0rem 1rem;
 }
 .section-paragraph {
   display: flex;
