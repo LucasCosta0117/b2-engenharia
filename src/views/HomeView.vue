@@ -29,7 +29,8 @@
         <CardGallery v-for="i in 2" :key="i"></CardGallery>
       </div>
     </section>
-    <section class="home-section-releases">
+    <section class="home-section-contact">
+      <SectionContainer :section-content="sectionsContent['contact']" />
       <ContactForm/>
     </section>
   </div>
@@ -116,6 +117,11 @@ export default ({
           ' que refletem nosso compromisso com a qualidade, inovação e eficiência.'+
           ' Para explorar o portfólio completo de obras e projetos, acesse a aba "Empreendimentos".'
         ]
+      },
+      'contact': {
+        mainTitle: 'Fale Conosco',
+        subTitle: 'Compartilhe seu sonho',
+        paragraphs: []
       },
     },
     listServices: [
