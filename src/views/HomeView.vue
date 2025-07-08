@@ -7,10 +7,10 @@
     </v-container>
   </v-carousel>
   <div class="home-container">
-    <section class="home-section-company">
+    <section class="home-section home-section-company">
       <SectionContainer :section-content="sectionsContent['company']" />
     </section>
-    <section class="home-section-services">
+    <section class="home-section home-section-services">
       <SectionContainer :section-content="sectionsContent['services']" />
       <div class="card-services">
         <CardItem
@@ -20,16 +20,16 @@
         />
       </div>
     </section>
-    <section class="home-section-compliance">
+    <section class="home-section home-section-compliance">
       <SectionContainer :section-content="sectionsContent['compliance']" />
     </section>
-    <section class="home-section-releases">
+    <section class="home-section home-section-releases">
       <SectionContainer :section-content="sectionsContent['releases']" />
       <div class="releases-gallery">
         <CardGallery v-for="i in 2" :key="i"></CardGallery>
       </div>
     </section>
-    <section class="home-section-contact">
+    <section class="home-section home-section-contact">
       <SectionContainer :section-content="sectionsContent['contact']" />
       <ContactForm/>
     </section>
@@ -184,9 +184,14 @@ export default ({
   display: flex;
   flex-direction: column;
 }
+.home-section {
+  padding: 2rem 0rem;
+}
 .home-section-services {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
   background: radial-gradient(circle, rgb(80, 10, 10) 0%, rgba(0, 0, 0, 1) 100%);
-  padding-bottom: 2rem;
   color: white;
 }
 .card-services {
@@ -241,9 +246,7 @@ export default ({
  * Vuetify 'lg' Break Point
  */
 @media (min-width: 1264px) {
-  .home-container {
-    max-width: 1300px;
-  }
+
 }
 
 /* Seção para Animações/Transições personalizadas*/
