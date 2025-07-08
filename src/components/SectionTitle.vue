@@ -75,7 +75,7 @@ export default {
  * Dispositivos grandes
  * Vuetify 'lg' Break Point
  */
-@media (min-width: 1264px) {
+@media (min-width: 1400px) {
 
 }
 </style>
