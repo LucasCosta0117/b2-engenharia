@@ -8,10 +8,10 @@
   </v-carousel>
   <div class="home-container">
     <section class="home-section home-section-company">
-      <SectionTitle class="section-title" :main-title="sectionsTitles['company'].mainTitle"
-        :sub-title="sectionsTitles['company'].subTitle" />
-      <div>
-        <v-img class="section-company-img" src='@/assets/image/vgp.webp' />
+      <div class="section-company-title">
+        <SectionTitle class="section-title" :main-title="sectionsTitles['company'].mainTitle"
+          :sub-title="sectionsTitles['company'].subTitle" />
+        <div class="section-company-img"></div>
       </div>
       <div class="section-paragraph">
         <p>
@@ -44,30 +44,34 @@
     </div>
     <div class="bg-img-building">
       <section class="home-section home-section-compliance">
-        <SectionTitle class="section-title" :main-title="sectionsTitles['compliance'].mainTitle"
-          :sub-title="sectionsTitles['compliance'].subTitle" />
-        <div class="section-paragraph">
-          <p>
-            A política de Compliance da empresa está fundamentada no rigoroso cumprimento das normas
-            e legislações vigentes. Como parte das ações preventivas e de monitoramento, a B2 disponibiliza
-            seu Código de Ética e Conduta, oferecendo um canal de comunicação direto e transparente.
-            Esse canal é acessível a todos que se relacionam conosco, seja de forma direta ou indireta —
-            como colaboradores, subcontratados, parceiros, clientes e demais partes interessadas.
-          </p>
-          <div>
-            <v-img class="section-compliance-img" src="@/assets/image/compliance.webp" />
+        <div class="section-compliance-p1">
+          <SectionTitle class="section-title" :main-title="sectionsTitles['compliance'].mainTitle"
+            :sub-title="sectionsTitles['compliance'].subTitle" />
+          <div class="section-paragraph">
+            <p>
+              A política de Compliance da empresa está fundamentada no rigoroso cumprimento das normas
+              e legislações vigentes. Como parte das ações preventivas e de monitoramento, a B2 disponibiliza
+              seu Código de Ética e Conduta, oferecendo um canal de comunicação direto e transparente.
+              Esse canal é acessível a todos que se relacionam conosco, seja de forma direta ou indireta —
+              como colaboradores, subcontratados, parceiros, clientes e demais partes interessadas.
+            </p>
           </div>
-          <p class="highlighted-paragraph">
+        </div>
+        <div class="section-compliance-img"></div>
+        <div class="section-compliance-p2">
+          <div class="highlighted-paragraph">
             Nosso compromisso com a Ética e a Conformidade abrange todas as áreas da empresa.
-          </p>
-          <ul class="section-compliance-list">
-            <li>Segurança do Trabalho</li>
-            <li>Operações</li>
-            <li>Contabilidade</li>
-            <li>Fiscal</li>
-            <li>Questões Trabalhistas</li>
-            <li>Responsabilidade Socioambiental</li>
-          </ul>
+          </div>
+          <div>
+            <ul class="section-compliance-list">
+              <li>Segurança do Trabalho</li>
+              <li>Operações</li>
+              <li>Contabilidade</li>
+              <li>Fiscal</li>
+              <li>Questões Trabalhistas</li>
+              <li>Responsabilidade Socioambiental</li>
+            </ul>
+          </div>
         </div>
       </section>
       <section class="home-section home-section-releases">
@@ -223,9 +227,20 @@ export default ({
   text-indent: 1rem;
   margin: 0rem 1rem;
 }
+.section-company-title {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
 .section-company-img {
-  border-radius: 0.5rem;
+  background-image: url('@/assets/image/vgp.webp');
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
+  max-width: 100%;
+  height: 22rem;
   margin: 0rem 1rem;
+  border-radius: 0.5rem;
 }
 .bg-rg-red {
   background: radial-gradient(circle, rgb(80, 10, 10) 0%, rgba(0, 0, 0, 1) 100%);
@@ -243,14 +258,31 @@ export default ({
   gap: 0.5rem;
   margin: 0rem 1rem;
 }
+.section-compliance-p1 {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
 .section-compliance-img {
+  background-image: url("@/assets/image/compliance.webp");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  max-width: 100%;
+  height: 10rem;
+  margin: 0rem 1rem;
   border-radius: 0.5rem;
+}
+.section-compliance-p2 {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 0rem 1rem;
 }
 .highlighted-paragraph {
   font-size: 1.25rem;
   text-align: start;
-  /* font-style: italic; */
-  font-weight: 600;
+  font-weight: 500;
 }
 .section-compliance-list {
   list-style: none;
@@ -260,8 +292,8 @@ export default ({
 }
 .section-compliance-list li {
   border-left: 3px solid rgb(113, 10, 10);
-  font-weight: 500;
   font-size: 1.15rem;
+  padding-left: 0.5rem;
 }
 .cards-releases {
   display: flex;
@@ -285,16 +317,15 @@ export default ({
     font-size: 2.5rem;
   }
   .section-company-img {
-    width: 15rem;
-    margin: 0rem 2rem;
+    height: 20rem;
   }
   .cards-services {
     flex-direction: row;
     flex-wrap: wrap;
   }
   .section-compliance-img {
-    width: 25rem;
-    margin: 0rem 1rem;
+    height: 15rem;
+    background-position: top;
   }
   .cards-releases {
     flex-direction: row;
@@ -322,14 +353,37 @@ export default ({
   .home-container {
     align-items: center;
   }
-  .section-subtitle {
-    font-size: 1.5rem;
+  .section-paragraph {
+    font-size: 1.1rem;
   }
   .bg-rg-red {
     width: 100%;
   }
   .home-section {
     max-width: 1000px;
+  }
+  .home-section-company {
+    flex-direction: row;
+  }
+  .section-company-title {
+    min-width: 40%;
+  }
+  .section-company-img {
+    height: 22rem;
+  }
+  .home-section-compliance {
+    gap: 2rem;
+  }
+  .section-compliance-img {
+    height: 20rem;
+  }
+  .section-compliance-p2 {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  .section-compliance-p2 .highlighted-paragraph {
+    width: 40%;
+    font-size: 1.7rem;
   }
   .cards-releases .card-container{
     width: 48%;
@@ -343,6 +397,9 @@ export default ({
 @media (min-width: 1400px) {
   .home-section {
     max-width: 1200px;
+  }
+  .section-company-img {
+    height: 17rem;
   }
 }
 
