@@ -13,6 +13,13 @@
         :main-title="sectionsTitles['company'].mainTitle"
         :sub-title="sectionsTitles['company'].subTitle"
       />
+      <div>
+        <v-img
+          class="section-company-img"
+          src='@/assets/image/vgp.webp'
+        >
+        </v-img>
+      </div>
       <div class="section-paragraph">
         <p>
           A B2 Engenharia e Construção nasceu com o propósito de viabilizar empreendimentos por meio de uma compreensão
@@ -222,6 +229,10 @@ export default ({
   font-size: 1rem;
   text-align: justify;
   text-indent: 1rem;
+  margin: 0rem 1rem;
+}
+.section-company-img {
+  border-radius: 0.5rem;
   margin: 0rem 1rem;
 }
 .bg-rg-red {
