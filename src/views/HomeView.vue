@@ -8,17 +8,10 @@
   </v-carousel>
   <div class="home-container">
     <section class="home-section home-section-company">
-      <SectionTitle
-        class="section-title"
-        :main-title="sectionsTitles['company'].mainTitle"
-        :sub-title="sectionsTitles['company'].subTitle"
-      />
+      <SectionTitle class="section-title" :main-title="sectionsTitles['company'].mainTitle"
+        :sub-title="sectionsTitles['company'].subTitle" />
       <div>
-        <v-img
-          class="section-company-img"
-          src='@/assets/image/vgp.webp'
-        >
-        </v-img>
+        <v-img class="section-company-img" src='@/assets/image/vgp.webp' />
       </div>
       <div class="section-paragraph">
         <p>
@@ -42,42 +35,44 @@
     </section>
     <div class="bg-rg-red">
       <section class="home-section home-section-services">
-        <SectionTitle
-          class="section-title"
-          :main-title="sectionsTitles['services'].mainTitle"
-          :sub-title="sectionsTitles['services'].subTitle"
-        />
+        <SectionTitle class="section-title" :main-title="sectionsTitles['services'].mainTitle"
+          :sub-title="sectionsTitles['services'].subTitle" />
         <div class="cards-services">
           <CardItem v-for="serv in listServices" :key="serv.title" :card-title="serv.title" :card-text="serv.text" />
         </div>
       </section>
     </div>
-    <section class="home-section home-section-compliance">
-      <SectionTitle
-        class="section-title"
-        :main-title="sectionsTitles['compliance'].mainTitle"
-        :sub-title="sectionsTitles['compliance'].subTitle"
-      />
-      <div class="section-paragraph">
-        <p>
-          A política de Compliance da B2 Engenharia & Construção está fundamentada no rigoroso cumprimento das normas
-          e legislações vigentes. Esse compromisso abrange todas as áreas da empresa, incluindo segurança do trabalho,
-          operações, contabilidade, fiscal, questões trabalhistas e responsabilidade socioambiental.
-        </p>
-        <p>
-          Como parte das ações preventivas e de monitoramento, a B2 disponibiliza seu Código de Ética e Conduta,
-          oferecendo um canal de comunicação direto e transparente. Esse canal é acessível a todos que se relacionam com
-          a empresa, seja de forma direta ou indireta — como colaboradores, subcontratados, parceiros, clientes e demais partes interessadas.
-        </p>
-      </div>
-    </section>
-    <div class="section-releases">
+    <div class="bg-img-building">
+      <section class="home-section home-section-compliance">
+        <SectionTitle class="section-title" :main-title="sectionsTitles['compliance'].mainTitle"
+          :sub-title="sectionsTitles['compliance'].subTitle" />
+        <div class="section-paragraph">
+          <p>
+            A política de Compliance da empresa está fundamentada no rigoroso cumprimento das normas
+            e legislações vigentes. Como parte das ações preventivas e de monitoramento, a B2 disponibiliza
+            seu Código de Ética e Conduta, oferecendo um canal de comunicação direto e transparente.
+            Esse canal é acessível a todos que se relacionam conosco, seja de forma direta ou indireta —
+            como colaboradores, subcontratados, parceiros, clientes e demais partes interessadas.
+          </p>
+          <div>
+            <v-img class="section-compliance-img" src="@/assets/image/compliance.webp" />
+          </div>
+          <p class="highlighted-paragraph">
+            Nosso compromisso com a Ética e a Conformidade abrange todas as áreas da empresa.
+          </p>
+          <ul class="section-compliance-list">
+            <li>Segurança do Trabalho</li>
+            <li>Operações</li>
+            <li>Contabilidade</li>
+            <li>Fiscal</li>
+            <li>Questões Trabalhistas</li>
+            <li>Responsabilidade Socioambiental</li>
+          </ul>
+        </div>
+      </section>
       <section class="home-section home-section-releases">
-        <SectionTitle
-          class="section-title"
-          :main-title="sectionsTitles['releases'].mainTitle"
-          :sub-title="sectionsTitles['releases'].subTitle"
-        />
+        <SectionTitle class="section-title" :main-title="sectionsTitles['releases'].mainTitle"
+          :sub-title="sectionsTitles['releases'].subTitle" />
         <div class="cards-releases">
           <CardGallery v-for="i in 2" :key="i"></CardGallery>
         </div>
@@ -85,11 +80,8 @@
     </div>
   </div>
   <section class="home-section home-section-contact">
-    <SectionTitle
-      class="section-title"
-      :main-title="sectionsTitles['contact'].mainTitle"
-      :sub-title="sectionsTitles['contact'].subTitle"
-    />
+    <SectionTitle class="section-title" :main-title="sectionsTitles['contact'].mainTitle"
+      :sub-title="sectionsTitles['contact'].subTitle" />
     <ContactForm />
   </section>
 </template>
@@ -238,6 +230,10 @@ export default ({
 .bg-rg-red {
   background: radial-gradient(circle, rgb(80, 10, 10) 0%, rgba(0, 0, 0, 1) 100%);
 }
+.bg-img-building {
+  background-image: url('@/assets/image/building.webp');
+  background-size: contain;
+}
 .home-section-services {
   color: white;
 }
@@ -246,6 +242,26 @@ export default ({
   flex-direction: column;
   gap: 0.5rem;
   margin: 0rem 1rem;
+}
+.section-compliance-img {
+  border-radius: 0.5rem;
+}
+.highlighted-paragraph {
+  font-size: 1.25rem;
+  text-align: start;
+  /* font-style: italic; */
+  font-weight: 600;
+}
+.section-compliance-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.section-compliance-list li {
+  border-left: 3px solid rgb(113, 10, 10);
+  font-weight: 500;
+  font-size: 1.15rem;
 }
 .cards-releases {
   display: flex;
@@ -306,9 +322,6 @@ export default ({
   }
   .home-section {
     max-width: 1000px;
-  }
-  .section-releases {
-    width: 100%;
   }
   .cards-releases .card-container{
     width: 48%;
