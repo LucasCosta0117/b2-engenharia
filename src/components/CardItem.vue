@@ -54,7 +54,9 @@ export default {
  * Vuetify 'sm' Break Point
  */
 @media (min-width: 600px) {
-
+  .card-item-container {
+    width: 49%;
+  }
 }
 /**
  * Dispositivos médios

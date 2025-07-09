@@ -44,12 +44,12 @@
       <v-row justify="space-around">
           <v-btn
             type="submit"
-            color="rgb(113, 10, 10)"
+            class="btn-submit-form"
           >
             Enviar
           </v-btn>
           <v-btn 
-            color="rgb(210, 210, 210)"
+            class="btn-clear-form"
             @click="handleReset"
           >
             Limpar
@@ -133,4 +133,38 @@ export default {
 }
 </script>
 <style scoped>
+.btn-submit-form {
+  background-color: rgb(113, 10, 10);
+  color: white;
+}
+.btn-clear-form {
+  background-color: rgb(210, 210, 210);
+}
+
+/**
+ * Pequenos dispositivos
+ * Vuetify 'sm' Break Point
+ */
+@media (min-width: 600px) {
+  .btn-submit-form {
+    min-width: 12rem;
+  }
+  .btn-clear-form {
+    min-width: 12rem;
+  }
+}
+/**
+ * Dispositivos médios
+ * Vuetify 'md' Break Point
+ */
+@media (min-width: 960px) {
+
+}
+/**
+ * Dispositivos grandes
+ * Vuetify 'lg' Break Point
+ */
+@media (min-width: 1400px) {
+
+}
 </style>

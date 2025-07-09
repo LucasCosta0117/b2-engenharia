@@ -12,7 +12,7 @@
     </section>
     <section class="home-section home-section-services">
       <SectionContainer :section-content="sectionsContent['services']" />
-      <div class="card-services">
+      <div class="cards-services">
         <CardItem
           v-for="serv in listServices" :key="serv.title"
           :card-title="serv.title"
@@ -25,7 +25,7 @@
     </section>
     <section class="home-section home-section-releases">
       <SectionContainer :section-content="sectionsContent['releases']" />
-      <div class="releases-gallery">
+      <div class="cards-releases">
         <CardGallery v-for="i in 2" :key="i"></CardGallery>
       </div>
     </section>
@@ -194,20 +194,23 @@ export default ({
   background: radial-gradient(circle, rgb(80, 10, 10) 0%, rgba(0, 0, 0, 1) 100%);
   color: white;
 }
-.card-services {
+.cards-services {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
   margin: 0rem 1rem;
-}
-.releases-gallery {
-  display: flex;
-  flex-direction: column;
-  margin: 0rem 1rem;
-  gap: 0.5rem;
 }
 .home-section-releases {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
   padding-bottom: 1rem;
+}
+.cards-releases {
+  display: flex;
+  flex-direction: column;
+  margin: 0rem 1rem;
+  gap: 0.5rem;
 }
 
 /**
@@ -223,6 +226,14 @@ export default ({
   }
   .caption-text {
     font-size: 2.5rem;
+  }
+  .cards-services {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .cards-releases {
+    flex-direction: row;
+    justify-content: space-around;
   }
 }
 /**
