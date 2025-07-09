@@ -38,6 +38,8 @@ export default {
 </script>
 <style scoped>
 .card-item-container {
+  display: flex;
+  flex-direction: column;
   height: 10rem;
 }
 .card-item-dash {
@@ -63,7 +65,14 @@ export default {
  * Vuetify 'md' Break Point
  */
 @media (min-width: 960px) {
-
+  .card-item-container {
+    justify-content: flex-start;
+    width: 24%;
+    height: 13rem;
+  }
+  .card-item-title {
+    white-space: normal;
+  }
 }
 /**
  * Dispositivos grandes

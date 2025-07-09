@@ -69,13 +69,17 @@ export default {
  * Vuetify 'md' Break Point
  */
 @media (min-width: 960px) {
-
+  .section-maintitle {
+    font-size: 1.75rem;
+  }
+  .section-subtitle {
+    font-size: 1.5rem;
+  }
 }
 /**
  * Dispositivos grandes
  * Vuetify 'lg' Break Point
  */
 @media (min-width: 1400px) {
-
 }
 </style>

@@ -10,30 +10,34 @@
     <section class="home-section home-section-company">
       <SectionContainer :section-content="sectionsContent['company']" />
     </section>
-    <section class="home-section home-section-services">
-      <SectionContainer :section-content="sectionsContent['services']" />
-      <div class="cards-services">
-        <CardItem
-          v-for="serv in listServices" :key="serv.title"
-          :card-title="serv.title"
-          :card-text="serv.text"
-        />
-      </div>
-    </section>
+    <div class="bg-rg-red">
+      <section class="home-section home-section-services">
+        <SectionContainer :section-content="sectionsContent['services']" />
+        <div class="cards-services">
+          <CardItem
+            v-for="serv in listServices" :key="serv.title"
+            :card-title="serv.title"
+            :card-text="serv.text"
+          />
+        </div>
+      </section>
+    </div>
     <section class="home-section home-section-compliance">
       <SectionContainer :section-content="sectionsContent['compliance']" />
     </section>
-    <section class="home-section home-section-releases">
-      <SectionContainer :section-content="sectionsContent['releases']" />
-      <div class="cards-releases">
-        <CardGallery v-for="i in 2" :key="i"></CardGallery>
-      </div>
-    </section>
-    <section class="home-section home-section-contact">
-      <SectionContainer :section-content="sectionsContent['contact']" />
-      <ContactForm/>
-    </section>
+    <div class="section-releases">
+      <section class="home-section home-section-releases">
+        <SectionContainer :section-content="sectionsContent['releases']" />
+        <div class="cards-releases">
+          <CardGallery v-for="i in 2" :key="i"></CardGallery>
+        </div>
+      </section>
+    </div>
   </div>
+  <section class="home-section home-section-contact">
+    <SectionContainer :section-content="sectionsContent['contact']" />
+    <ContactForm/>
+  </section>
 </template>
 <script>
 import CardGallery from '@/components/CardGallery.vue';
@@ -77,17 +81,17 @@ export default ({
         mainTitle: 'A Empresa',
         subTitle: 'B2 Engenharia & Construção',
         paragraphs: [
-          'A B2 Engenharia e Construção nasceu com o propósito de viabilizar empreendimentos por meio de uma compreensão'+
-          'aprofundada do mercado e das variáveis determinantes para o sucesso de cada projeto.Com respeito aos sonhos'+
-          'de nossos parceiros, atuamos de forma sustentável, apoiados na ampla experiência de nossos profissionais em'+
+          'A B2 Engenharia e Construção nasceu com o propósito de viabilizar empreendimentos por meio de uma compreensão '+
+          'aprofundada do mercado e das variáveis determinantes para o sucesso de cada projeto.Com respeito aos sonhos '+
+          'de nossos parceiros, atuamos de forma sustentável, apoiados na ampla experiência de nossos profissionais em '+
           'obras de grande porte.',
 
-          'Nosso trabalho é fortemente voltado para a Incorporação Imobiliária, tanto em projetos comerciais quanto'+
-          'residenciais. Atuamos desde a concepção e aprovação até a execução completa do empreendimento. Para'+
+          'Nosso trabalho é fortemente voltado para a Incorporação Imobiliária, tanto em projetos comerciais quanto '+
+          'residenciais. Atuamos desde a concepção e aprovação até a execução completa do empreendimento. Para '+
           'iniciativas que exigem aporte financeiro, realizamos toda a captação de recursos necessária para viabilizar sua implantação.',
 
-          'Com profundo conhecimento do setor, a B2 desenvolve soluções inteligentes e personalizadas para diferentes'+
-          'perfis de público e regiões. Seguimos rigorosamente nossa política de Compliance e mantemos uma gestão ativa'+
+          'Com profundo conhecimento do setor, a B2 desenvolve soluções inteligentes e personalizadas para diferentes '+
+          'perfis de público e regiões. Seguimos rigorosamente nossa política de Compliance e mantemos uma gestão ativa '+
           'nos empreendimentos, com o objetivo de mitigar riscos e potencializar os resultados.'
         ]
       },
@@ -100,23 +104,19 @@ export default ({
         mainTitle: 'Compliance',
         subTitle: 'Ética e Conformidade',
         paragraphs: [
-          'A política de Compliance da B2 Engenharia & Construção está fundamentada no rigoroso cumprimento das normas'+
-          'e legislações vigentes. Esse compromisso abrange todas as áreas da empresa, incluindo segurança do trabalho,'+
+          'A política de Compliance da B2 Engenharia & Construção está fundamentada no rigoroso cumprimento das normas '+
+          'e legislações vigentes. Esse compromisso abrange todas as áreas da empresa, incluindo segurança do trabalho, '+
           'operações, contabilidade, fiscal, questões trabalhistas e responsabilidade socioambiental.',
 
-          'Como parte das ações preventivas e de monitoramento, a B2 disponibiliza seu Código de Ética e Conduta,'+
-          'oferecendo um canal de comunicação direto e transparente. Esse canal é acessível a todos que se relacionam com'+
+          'Como parte das ações preventivas e de monitoramento, a B2 disponibiliza seu Código de Ética e Conduta, '+
+          'oferecendo um canal de comunicação direto e transparente. Esse canal é acessível a todos que se relacionam com '+
           'a empresa, seja de forma direta ou indireta — como colaboradores, subcontratados, parceiros, clientes e demais partes interessadas.'
         ]
       },
       'releases': {
         mainTitle: 'Lançamentos',
         subTitle: 'Empreendimentos em foco',
-        paragraphs: [
-          'Conheça os empreendimentos mais recentes desenvolvidos pela B2 Engenharia & Construção,'+
-          ' que refletem nosso compromisso com a qualidade, inovação e eficiência.'+
-          ' Para explorar o portfólio completo de obras e projetos, acesse a aba "Empreendimentos".'
-        ]
+        paragraphs: []
       },
       'contact': {
         mainTitle: 'Fale Conosco',
@@ -186,13 +186,16 @@ export default ({
 }
 .home-section {
   padding: 2rem 0rem;
+  margin: 0 auto;
 }
 .home-section-services {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  background: radial-gradient(circle, rgb(80, 10, 10) 0%, rgba(0, 0, 0, 1) 100%);
   color: white;
+}
+.bg-rg-red {
+  background: radial-gradient(circle, rgb(80, 10, 10) 0%, rgba(0, 0, 0, 1) 100%);
 }
 .cards-services {
   display: flex;
@@ -203,14 +206,14 @@ export default ({
 .home-section-releases {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 2rem;
   padding-bottom: 1rem;
 }
 .cards-releases {
   display: flex;
   flex-direction: column;
-  margin: 0rem 1rem;
   gap: 0.5rem;
+  margin: 0rem 1rem;
 }
 
 /**
@@ -233,7 +236,11 @@ export default ({
   }
   .cards-releases {
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-around;
+  }
+  .home-section-services {
+    padding-bottom: 5rem;
   }
 }
 /**
@@ -250,6 +257,21 @@ export default ({
   .caption-text {
     font-size: 3.5rem;
   }
+  .home-container {
+    align-items: center;
+  }
+  .bg-rg-red {
+    width: 100%;
+  }
+  .home-section {
+    max-width: 1000px;
+  }
+  .section-releases {
+    width: 100%;
+  }
+  .cards-releases .card-container{
+    width: 48%;
+  }
 }
 
 /**
@@ -257,7 +279,9 @@ export default ({
  * Vuetify 'lg' Break Point
  */
 @media (min-width: 1400px) {
-
+  .home-section {
+    max-width: 1200px;
+  }
 }
 
 /* Seção para Animações/Transições personalizadas*/

@@ -1,6 +1,7 @@
 <template>
   <div class="section-container">
-    <SectionTitle 
+    <SectionTitle
+      class="section-main-title"
       :main-title="sectionContent.mainTitle"
       :sub-title="sectionContent.subTitle"
     />
@@ -66,13 +67,23 @@ export default {
  * Vuetify 'md' Break Point
  */
 @media (min-width: 960px) {
-
+  .section-container {
+    flex-direction: row;
+  }
+  .section-main-title {
+    min-width: 40%;
+  }
+  .section-paragraph {
+    font-size: 1.1rem;
+  }
 }
 /**
  * Dispositivos grandes
  * Vuetify 'lg' Break Point
  */
 @media (min-width: 1400px) {
-
+  .section-paragraph {
+    font-size: 1.2rem;
+  }
 }
 </style>
