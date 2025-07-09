@@ -8,26 +8,69 @@
   </v-carousel>
   <div class="home-container">
     <section class="home-section home-section-company">
-      <SectionContainer :section-content="sectionsContent['company']" />
+      <SectionTitle
+        class="section-title"
+        :main-title="sectionsTitles['company'].mainTitle"
+        :sub-title="sectionsTitles['company'].subTitle"
+      />
+      <div class="section-paragraph">
+        <p>
+          A B2 Engenharia e Construção nasceu com o propósito de viabilizar empreendimentos por meio de uma compreensão
+          aprofundada do mercado e das variáveis determinantes para o sucesso de cada projeto. Com respeito aos sonhos
+          de nossos parceiros, atuamos de forma sustentável, apoiados na ampla experiência de nossos profissionais em
+          obras de grande porte.
+        </p>
+        <p>
+          Nosso trabalho é fortemente voltado para a Incorporação Imobiliária, tanto em projetos comerciais quanto
+          residenciais. Atuamos desde a concepção e aprovação até a execução completa do empreendimento. Para
+          iniciativas que exigem aporte financeiro, realizamos toda a captação de recursos necessária para viabilizar
+          sua implantação.
+        </p>
+        <p>
+          Com profundo conhecimento do setor, a B2 desenvolve soluções inteligentes e personalizadas para diferentes
+          perfis de público e regiões. Seguimos rigorosamente nossa política de Compliance e mantemos uma gestão ativa
+          nos empreendimentos, com o objetivo de mitigar riscos e potencializar os resultados.
+        </p>
+      </div>
     </section>
     <div class="bg-rg-red">
       <section class="home-section home-section-services">
-        <SectionContainer :section-content="sectionsContent['services']" />
+        <SectionTitle
+          class="section-title"
+          :main-title="sectionsTitles['services'].mainTitle"
+          :sub-title="sectionsTitles['services'].subTitle"
+        />
         <div class="cards-services">
-          <CardItem
-            v-for="serv in listServices" :key="serv.title"
-            :card-title="serv.title"
-            :card-text="serv.text"
-          />
+          <CardItem v-for="serv in listServices" :key="serv.title" :card-title="serv.title" :card-text="serv.text" />
         </div>
       </section>
     </div>
     <section class="home-section home-section-compliance">
-      <SectionContainer :section-content="sectionsContent['compliance']" />
+      <SectionTitle
+        class="section-title"
+        :main-title="sectionsTitles['compliance'].mainTitle"
+        :sub-title="sectionsTitles['compliance'].subTitle"
+      />
+      <div class="section-paragraph">
+        <p>
+          A política de Compliance da B2 Engenharia & Construção está fundamentada no rigoroso cumprimento das normas
+          e legislações vigentes. Esse compromisso abrange todas as áreas da empresa, incluindo segurança do trabalho,
+          operações, contabilidade, fiscal, questões trabalhistas e responsabilidade socioambiental.
+        </p>
+        <p>
+          Como parte das ações preventivas e de monitoramento, a B2 disponibiliza seu Código de Ética e Conduta,
+          oferecendo um canal de comunicação direto e transparente. Esse canal é acessível a todos que se relacionam com
+          a empresa, seja de forma direta ou indireta — como colaboradores, subcontratados, parceiros, clientes e demais partes interessadas.
+        </p>
+      </div>
     </section>
     <div class="section-releases">
       <section class="home-section home-section-releases">
-        <SectionContainer :section-content="sectionsContent['releases']" />
+        <SectionTitle
+          class="section-title"
+          :main-title="sectionsTitles['releases'].mainTitle"
+          :sub-title="sectionsTitles['releases'].subTitle"
+        />
         <div class="cards-releases">
           <CardGallery v-for="i in 2" :key="i"></CardGallery>
         </div>
@@ -35,15 +78,19 @@
     </div>
   </div>
   <section class="home-section home-section-contact">
-    <SectionContainer :section-content="sectionsContent['contact']" />
-    <ContactForm/>
+    <SectionTitle
+      class="section-title"
+      :main-title="sectionsTitles['contact'].mainTitle"
+      :sub-title="sectionsTitles['contact'].subTitle"
+    />
+    <ContactForm />
   </section>
 </template>
 <script>
 import CardGallery from '@/components/CardGallery.vue';
 import CardItem from '@/components/CardItem.vue';
 import ContactForm from '@/components/ContactForm.vue';
-import SectionContainer from '@/components/SectionContainer.vue';
+import SectionTitle from '@/components/SectionTitle.vue';
 
 /**
  * Página principal de apresentação do site.
@@ -54,7 +101,7 @@ export default ({
     CardGallery,
     CardItem,
     ContactForm,
-    SectionContainer
+    SectionTitle
   },
   data: () => ({
     images: [
@@ -76,52 +123,26 @@ export default ({
       }
     ],
     currentSlide: 0,
-    sectionsContent: {
+    sectionsTitles: {
       'company': {
         mainTitle: 'A Empresa',
-        subTitle: 'B2 Engenharia & Construção',
-        paragraphs: [
-          'A B2 Engenharia e Construção nasceu com o propósito de viabilizar empreendimentos por meio de uma compreensão '+
-          'aprofundada do mercado e das variáveis determinantes para o sucesso de cada projeto.Com respeito aos sonhos '+
-          'de nossos parceiros, atuamos de forma sustentável, apoiados na ampla experiência de nossos profissionais em '+
-          'obras de grande porte.',
-
-          'Nosso trabalho é fortemente voltado para a Incorporação Imobiliária, tanto em projetos comerciais quanto '+
-          'residenciais. Atuamos desde a concepção e aprovação até a execução completa do empreendimento. Para '+
-          'iniciativas que exigem aporte financeiro, realizamos toda a captação de recursos necessária para viabilizar sua implantação.',
-
-          'Com profundo conhecimento do setor, a B2 desenvolve soluções inteligentes e personalizadas para diferentes '+
-          'perfis de público e regiões. Seguimos rigorosamente nossa política de Compliance e mantemos uma gestão ativa '+
-          'nos empreendimentos, com o objetivo de mitigar riscos e potencializar os resultados.'
-        ]
+        subTitle: 'B2 Engenharia & Construção'
       },
       'services': {
         mainTitle: 'Nossos Serviços',
-        subTitle: 'Engenharia de qualidade',
-        paragraphs: []
+        subTitle: 'Engenharia de qualidade'
       },
       'compliance': {
         mainTitle: 'Compliance',
-        subTitle: 'Ética e Conformidade',
-        paragraphs: [
-          'A política de Compliance da B2 Engenharia & Construção está fundamentada no rigoroso cumprimento das normas '+
-          'e legislações vigentes. Esse compromisso abrange todas as áreas da empresa, incluindo segurança do trabalho, '+
-          'operações, contabilidade, fiscal, questões trabalhistas e responsabilidade socioambiental.',
-
-          'Como parte das ações preventivas e de monitoramento, a B2 disponibiliza seu Código de Ética e Conduta, '+
-          'oferecendo um canal de comunicação direto e transparente. Esse canal é acessível a todos que se relacionam com '+
-          'a empresa, seja de forma direta ou indireta — como colaboradores, subcontratados, parceiros, clientes e demais partes interessadas.'
-        ]
+        subTitle: 'Ética e Conformidade'
       },
       'releases': {
         mainTitle: 'Lançamentos',
-        subTitle: 'Empreendimentos em foco',
-        paragraphs: []
+        subTitle: 'Empreendimentos em foco'
       },
       'contact': {
         mainTitle: 'Fale Conosco',
-        subTitle: 'Compartilhe seu sonho',
-        paragraphs: []
+        subTitle: 'Compartilhe seu sonho'
       },
     },
     listServices: [
@@ -185,29 +206,35 @@ export default ({
   flex-direction: column;
 }
 .home-section {
-  padding: 2rem 0rem;
-  margin: 0 auto;
-}
-.home-section-services {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  color: white;
+  padding: 2rem 0rem;
+  margin: 0 auto;
+}
+.section-title {
+  margin: 0 1rem;
+}
+.section-paragraph {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-size: 1rem;
+  text-align: justify;
+  text-indent: 1rem;
+  margin: 0rem 1rem;
 }
 .bg-rg-red {
   background: radial-gradient(circle, rgb(80, 10, 10) 0%, rgba(0, 0, 0, 1) 100%);
+}
+.home-section-services {
+  color: white;
 }
 .cards-services {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
   margin: 0rem 1rem;
-}
-.home-section-releases {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  padding-bottom: 1rem;
 }
 .cards-releases {
   display: flex;
@@ -259,6 +286,9 @@ export default ({
   }
   .home-container {
     align-items: center;
+  }
+  .section-subtitle {
+    font-size: 1.5rem;
   }
   .bg-rg-red {
     width: 100%;

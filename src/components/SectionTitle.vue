@@ -51,6 +51,9 @@ export default {
   border-bottom: solid goldenrod 1px;
   padding-bottom: 0.5rem;
 }
+.section-maintitle {
+  font-size: 1.5rem;
+}
 .section-subtitle {
   font-size: 1.25rem;
   margin: 0rem 1rem;
