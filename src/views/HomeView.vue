@@ -284,9 +284,17 @@ export default ({
   .caption-text {
     font-size: 2.5rem;
   }
+  .section-company-img {
+    width: 15rem;
+    margin: 0rem 2rem;
+  }
   .cards-services {
     flex-direction: row;
     flex-wrap: wrap;
+  }
+  .section-compliance-img {
+    width: 25rem;
+    margin: 0rem 1rem;
   }
   .cards-releases {
     flex-direction: row;
