@@ -41,6 +41,14 @@
           ></v-select>
         </v-col>
       </v-row>
+      <v-textarea
+        class="message-area"
+        v-model="message.value.value"
+        :counter="300"
+        :error-messages="message.errorMessage.value"
+        label="Mensagem"
+        placeholder="Compartilhe seu sonho ou envie sua avaliação"
+      ></v-textarea>
       <v-row justify="space-around">
           <v-btn
             type="submit"
@@ -61,6 +69,7 @@
 <script>
 import { ref } from 'vue'
 import { useField, useForm } from 'vee-validate'
+import emailjs from 'emailjs-com'
 
 /**
  * Cria o Formulário de Contato para captação de leads,
@@ -72,10 +81,11 @@ export default {
     const { handleSubmit, handleReset } = useForm({
       validationSchema: {
         name: value => value?.length >= 2 || 'O Nome precisa ter pelo menos 2 caracteres.',
-        phone: value => /^[0-9-]{7,}$/.test(value) || 'O Número precisa ter pelo menos 11 dígitos (Incluindo o DDD e sem espaços).',
-        email: value => /^[a-z.-]+@[a-z.-]+\.[a-z]+$/i.test(value) || 'E-mail fornecido não é válido.',
+        phone: value => /^[0-9-]{11,}$/.test(value) || 'O Número precisa ter pelo menos 11 dígitos (Incluindo o DDD e sem espaços).',
+        email: value => /.+@.+\..+/.test(value) || 'E-mail fornecido não é válido.',
         city: value => value?.length >= 2 || 'A Cidade precisa ter pelo menos 2 caracteres.',
         state: value => !!value || 'Selecione um Estado.',
+        message: value => value?.length <= 300 || 'Mensagem muito longa, reduza para 300 caracteres.',
       }
     })
 
@@ -84,6 +94,7 @@ export default {
     const email = useField('email')
     const city = useField('city')
     const state = useField('state')
+    const message = useField('message')
     const listOfStates = ref([
       'Acre',
       'Alagoas',
@@ -115,8 +126,32 @@ export default {
     ])
 
     const submit = handleSubmit(values => {
-      //Enviar email para conta da b2.
-      alert(JSON.stringify(values, null, 2))
+      const serviceID = import.meta.env.VUE_APP_EMAILJS_SERVICE_ID
+      const templateID = import.meta.env.VUE_APP_EMAILJS_TEMPLATE_ID
+      const publicKey = import.meta.env.VUE_APP_EMAILJS_PUBLIC_KEY
+
+      const now = new Date()
+      const dateFormated = `${now.getDate()}/${now.getMonth()}/${now.getFullYear()} - ${now.getHours()}:${now.getMinutes()}`;
+
+      emailjs.send(
+        serviceID,
+        templateID,
+        {
+          title: 'Fale Conosco: B2 Engenharia e Construção',
+          time: dateFormated,
+          name: values.name,
+          email: values.email,
+          phone: values.phone,
+          city: values.city,
+          state: values.state,
+          message: values.message,
+        },
+        publicKey
+      ).then(response => {
+        alert('Mensagem enviada com sucesso!', response);
+      }).catch(error => {
+        alert('Erro ao enviar: ' + error.text);
+      });
     })
 
     return {
@@ -125,6 +160,7 @@ export default {
       email,
       city,
       state,
+      message,
       listOfStates,
       submit,
       handleReset
@@ -133,6 +169,9 @@ export default {
 }
 </script>
 <style scoped>
+.message-area {
+  margin-bottom: 1.5rem;
+}
 .btn-submit-form {
   background-color: rgb(113, 10, 10);
   color: white;
