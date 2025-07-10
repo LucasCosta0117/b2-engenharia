@@ -4,7 +4,8 @@
     :header-title="headerTitle"
   />
   <v-container class="gallery-container">
-    <SectionTitle :title="'Galeria'"></SectionTitle>
+    <SectionTitle class="section-title" :main-title="sectionTitle.mainTitle"
+      :sub-title="sectionTitle.subTitle" />
     <div class="card-gallery-container">
       <CardGallery v-for="i in 8" :key="i"></CardGallery>
     </div>
@@ -24,7 +25,11 @@ export default {
   },
   data: () => ({
     headerImage: require("@/assets/image/gallery-header.webp"),
-    headerTitle: 'Nossos empreendimentos'
+    headerTitle: 'Nossos empreendimentos',
+    sectionTitle: {
+      mainTitle: 'Galeria',
+      subTitle: 'Lançamentos e Entregas'
+    }
   }),
 }
 </script>
@@ -33,6 +38,8 @@ export default {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  background-image: url('@/assets/image/building.webp');
+  background-size: cover;
 }
 
 /**
