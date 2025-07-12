@@ -150,36 +150,36 @@ export default ({
     },
     listServices: [
       {
-        'title': 'Loteamento aberto e fechado',
-        'text': 'Planejamento, aprovação e execução de loteamentos com foco em mobilidade, segurança e infraestrutura de qualidade.',
+        title: 'Loteamento aberto e fechado',
+        text: 'Planejamento, aprovação e execução de loteamentos com foco em mobilidade, segurança e infraestrutura de qualidade.',
       },
       {
-        'title': 'Desenvolvimento Imobiliário',
-        'text': 'Gestão completa de empreendimentos, desde a viabilidade até a comercialização, com análise estratégica do mercado.',
+        title: 'Desenvolvimento Imobiliário',
+        text: 'Gestão completa de empreendimentos, desde a viabilidade até a comercialização, com análise estratégica do mercado.',
       },
       {
-        'title': 'Estruturação de Operações Financeiras',
-        'text': 'Captação e estruturação de recursos financeiros para viabilização e alavancagem de projetos imobiliários e de infraestrutura.',
+        title: 'Estruturação de Operações Financeiras',
+        text: 'Captação e estruturação de recursos financeiros para viabilização e alavancagem de projetos imobiliários e de infraestrutura.',
       },
       {
-        'title': 'Edificações horizontais e verticais',
-        'text': 'Construção de residenciais, comerciais e corporativos com soluções técnicas eficientes e alto padrão construtivo.',
+        title: 'Edificações horizontais e verticais',
+        text: 'Construção de residenciais, comerciais e corporativos com soluções técnicas eficientes e alto padrão construtivo.',
       },
       {
-        'title': 'Usinas Solares',
-        'text': 'Implantação de usinas fotovoltaicas com foco em eficiência energética e retorno sustentável para investidores e parceiros.',
+        title: 'Usinas Solares',
+        text: 'Implantação de usinas fotovoltaicas com foco em eficiência energética e retorno sustentável para investidores e parceiros.',
       },
       {
-        'title': 'Retrofit de Edificações',
-        'text': 'Requalificação de imóveis com foco na valorização patrimonial, eficiência operacional e adequação às normas atuais.',
+        title: 'Retrofit de Edificações',
+        text: 'Requalificação de imóveis com foco na valorização patrimonial, eficiência operacional e adequação às normas atuais.',
       },
       {
-        'title': 'Infraestrutura',
-        'text': 'Execução de obras de infraestrutura urbana e industrial, com foco em durabilidade, funcionalidade e responsabilidade ambiental.',
+        title: 'Infraestrutura',
+        text: 'Execução de obras de infraestrutura urbana e industrial, com foco em durabilidade, funcionalidade e responsabilidade ambiental.',
       },
       {
-        'title': 'Galpões Logísticos',
-        'text': 'Projetos e construção de centros logísticos otimizados, com alto desempenho operacional e adaptabilidade às demandas do setor.',
+        title: 'Galpões Logísticos',
+        text: 'Projetos e construção de centros logísticos otimizados, com alto desempenho operacional e adaptabilidade às demandas do setor.',
       }
     ]
   }),
