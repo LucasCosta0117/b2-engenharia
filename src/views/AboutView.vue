@@ -1,12 +1,8 @@
 <template>
-  <HeaderPage 
-    :header-image="headerImage"
-    :header-title="headerTitle"
-  />
+  <HeaderPage :header-image="headerImage" :header-title="headerTitle" />
   <v-container class="about-container">
     <div class="section-about-p1">
-      <SectionTitle class="section-title" :main-title="sectionTitle.mainTitle"
-        :sub-title="sectionTitle.subTitle" />
+      <SectionTitle class="section-title" :main-title="sectionTitle.mainTitle" :sub-title="sectionTitle.subTitle" />
       <div class="section-paragraph">
         <p>
           Na B2 Engenharia e Construção, oferecemos soluções completas para o setor imobiliário e de infraestrutura.
@@ -18,10 +14,29 @@
       <div>"Imagens de projetos B2"</div>
     </div>
     <div class="section-about-p2">
-      <SectionTitle class="section-title" :main-title="'Nossos Valores'"
-        :sub-title="''" />
+      <SectionTitle class="section-title" :main-title="'Nossos Valores'" :sub-title="''" />
       <div class="cards-business-values">
-        <CardIcon v-for="val in listBusinessValues" :key="val.title" :card-title="val.title" :card-text="val.text" :card-icon="val.icon"/>
+        <CardIcon v-for="val in listBusinessValues" :key="val.title" :card-title="val.title" :card-text="val.text"
+          :card-icon="val.icon" />
+      </div>
+    </div>
+    <div class="section-about-p3">
+      <div>
+        <SectionTitle class="section-title" :main-title="'Missão'" :sub-title="''" />
+        <div class="section-paragraph">
+          <p>
+            Promover o desenvolvimento imobiliário sustentável através de seus projetos e obras, influenciando e sendo
+            influenciado pelas boas práticas que aparecem a cada dia no mercado.
+          </p>
+        </div>
+      </div>
+      <div>
+        <SectionTitle class="section-title" :main-title="'Visão'" :sub-title="''" />
+        <div class="section-paragraph">
+          <p>
+            Ser reconhecida como uma das principais construtoras e incorporadoras em atuação no mercado.
+          </p>
+        </div>
       </div>
     </div>
   </v-container>
@@ -112,6 +127,17 @@ export default {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+}
+.section-about-p3 {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  text-align: center;
+}
+.section-about-p3 .section-paragraph {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 500;
 }
 
 /**
