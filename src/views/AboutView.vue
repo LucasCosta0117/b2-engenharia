@@ -39,6 +39,57 @@
         </div>
       </div>
     </div>
+    <div class="section-about-p4">
+      <SectionTitle class="section-title" :main-title="'Sócios Fundadores'" :sub-title="''" />
+      <div class="partners-paragraph">
+        <div class="section-paragraph">
+          <h3>
+            <i class="mdi mdi-account-hard-hat worker-icon"></i>
+            Vitor Brasileiro
+          </h3>
+          <p>
+            Engenheiro Civil graduado pela Universidade Federal da Bahia, possui sólida experiência no setor
+            da construção civil, com atuação em mais de 50 obras distribuídas em 8 estados brasileiros. Entre 2009 e
+            2020,
+            participou da incorporação e construção de aproximadamente 500.000m² em empreendimentos de grande porte,
+            abrangendo segmentos como edificações verticais, condomínios horizontais, infraestrutura urbana, hospitais,
+            aeroportos, arenas multiuso, usinas solares e obras industriais. Ao longo da carreira, esteve envolvido em
+            projetos que somam mais de R$10 bilhões em volume de negócios, consolidando amplo know-how técnico e
+            gerencial.
+          </p>
+        </div>
+        <div class="section-paragraph">
+          <h3>
+            <i class="mdi mdi-account-hard-hat worker-icon"></i>
+            Raul Barretto
+          </h3>
+          <p>
+            Engenheiro Civil graduado pela Universidade Federal da Bahia, construiu sua trajetória profissional
+            atuando em grandes obras e processos licitatórios em 6 estados brasileiros. Participou de projetos
+            relevantes
+            em áreas como rodovias, ferrovias, pontes, edificações públicas e incorporação imobiliária. Com passagens
+            por
+            empresas de referência nacional, acumulou expertise na gestão de contratos de alta complexidade e execução
+            de
+            empreendimentos de grande escala.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="section-about-p5">
+      <SectionTitle class="section-title" :main-title="'Identidade Empresarial'" :sub-title="'Nossa Essência'" />
+      <div class="section-paragraph">
+        <p>
+          A B2 Engenharia & Construção é uma empresa que une experiência técnica, visão estratégica de mercado e
+          compromisso com a sustentabilidade para desenvolver e executar empreendimentos inteligentes em diversas
+          regiões do país. Atuando nos segmentos de incorporação imobiliária, infraestrutura, energia solar, retrofit e
+          edificações, a B2 alia sua capacidade de estruturação financeira com um modelo de gestão ativo, pautado por
+          valores como integridade, responsabilidade e melhoria contínua. Com forte presença no setor de loteamentos e
+          uma política rigorosa de compliance, a empresa se posiciona como parceira sólida para investidores e clientes
+          que buscam excelência, segurança e resultados sustentáveis no mercado da construção civil.
+        </p>
+      </div>
+    </div>
   </v-container>
 </template>
 <script>
@@ -138,6 +189,19 @@ export default {
   text-align: center;
   font-size: 1.2rem;
   font-weight: 500;
+}
+.partners-paragraph {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.worker-icon {
+  color: rgb(113, 10, 10);
+}
+.section-about-p5 {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 /**
