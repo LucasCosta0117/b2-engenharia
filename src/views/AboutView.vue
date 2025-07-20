@@ -1,8 +1,8 @@
 <template>
   <HeaderPage :header-image="headerImage" :header-title="headerTitle" />
-  <v-container class="about-container">
+  <div class="about-container">
     <div class="section-about-p1">
-      <SectionTitle class="section-title" :main-title="sectionTitle.mainTitle" :sub-title="sectionTitle.subTitle" />
+      <SectionTitle :main-title="sectionTitle.mainTitle" :sub-title="sectionTitle.subTitle" />
       <div class="section-paragraph">
         <p>
           Na B2 Engenharia e Construção, oferecemos soluções completas para o setor imobiliário e de infraestrutura.
@@ -31,7 +31,7 @@
       </div>
     </div>
     <div class="section-about-p2">
-      <SectionTitle class="section-title" :main-title="'Nossos Valores'" :sub-title="''" />
+      <SectionTitle :main-title="'Nossos Valores'" :sub-title="''" />
       <div class="cards-business-values">
         <CardIcon v-for="val in listBusinessValues" :key="val.title" :card-title="val.title" :card-text="val.text"
           :card-icon="val.icon" />
@@ -39,7 +39,7 @@
     </div>
     <div class="section-about-p3">
       <div>
-        <SectionTitle class="section-title" :main-title="'Missão'" :sub-title="''" />
+        <SectionTitle :main-title="'Missão'" :sub-title="''" />
         <div class="section-paragraph">
           <p>
             Promover o desenvolvimento imobiliário sustentável através de seus projetos e obras, influenciando e sendo
@@ -48,7 +48,7 @@
         </div>
       </div>
       <div>
-        <SectionTitle class="section-title" :main-title="'Visão'" :sub-title="''" />
+        <SectionTitle :main-title="'Visão'" :sub-title="''" />
         <div class="section-paragraph">
           <p>
             Ser reconhecida como uma das principais construtoras e incorporadoras em atuação no mercado.
@@ -57,7 +57,7 @@
       </div>
     </div>
     <div class="section-about-p4">
-      <SectionTitle class="section-title" :main-title="'Sócios Fundadores'" :sub-title="''" />
+      <SectionTitle :main-title="'Sócios Fundadores'" :sub-title="''" />
       <div class="partners-paragraph">
         <div class="section-paragraph">
           <h3>
@@ -94,7 +94,7 @@
       </div>
     </div>
     <div class="section-about-p5">
-      <SectionTitle class="section-title" :main-title="'Identidade Empresarial'" :sub-title="'Nossa Essência'" />
+      <SectionTitle :main-title="'Identidade Empresarial'" :sub-title="'Nossa Essência'" />
       <div class="section-paragraph">
         <p>
           A B2 Engenharia & Construção é uma empresa que une experiência técnica, visão estratégica de mercado e
@@ -107,7 +107,7 @@
         </p>
       </div>
     </div>
-  </v-container>
+  </div>
 </template>
 <script>
 import CardIcon from '@/components/CardIcon.vue';
@@ -168,14 +168,12 @@ export default {
   display: flex;
   flex-direction: column;
   gap: 5rem;
+  padding: 2rem 1rem;
 }
 .section-about-p1 {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-}
-.section-title {
-  margin: 0 1rem;
 }
 .section-paragraph {
   display: flex;
@@ -184,7 +182,6 @@ export default {
   font-size: 1rem;
   text-align: justify;
   text-indent: 1rem;
-  margin: 0rem 1rem;
 }
 .section-imgs-p1 {
   height: 10rem;
