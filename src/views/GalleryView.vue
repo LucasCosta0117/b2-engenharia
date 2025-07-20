@@ -41,6 +41,11 @@ export default {
   background-image: url('@/assets/image/building.webp');
   background-size: cover;
 }
+.card-gallery-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
 
 /**
  * Pequenos dispositivos
@@ -48,7 +53,6 @@ export default {
  */
 @media (min-width: 600px) {
   .card-gallery-container {
-    display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     gap: 2rem;
