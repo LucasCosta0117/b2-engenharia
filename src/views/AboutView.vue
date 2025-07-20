@@ -11,7 +11,24 @@
           entregas sólidas, inovadoras e com alto padrão de excelência.
         </p>
       </div>
-      <div>"Imagens de projetos B2"</div>
+      <div>
+        <v-row class="ml-2 mr-2">
+          <v-col cols="3" class="pa-1">
+            <div class="section-imgs-p1 img-01-p1"></div>
+          </v-col>
+          <v-col cols="9" class="pa-1">
+            <div class="section-imgs-p1 img-02-p1"></div>
+          </v-col>
+        </v-row>
+        <v-row class="ml-2 mr-2">
+          <v-col cols="5" class="pa-1">
+            <div class="section-imgs-p1 img-03-p1"></div>
+          </v-col>
+          <v-col cols="7" class="pa-1">
+            <div class="section-imgs-p1 img-04-p1"></div>
+          </v-col>
+        </v-row>
+      </div>
     </div>
     <div class="section-about-p2">
       <SectionTitle class="section-title" :main-title="'Nossos Valores'" :sub-title="''" />
@@ -150,7 +167,7 @@ export default {
 .about-container {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 5rem;
 }
 .section-about-p1 {
   display: flex;
@@ -169,10 +186,26 @@ export default {
   text-indent: 1rem;
   margin: 0rem 1rem;
 }
+.section-imgs-p1 {
+  height: 10rem;
+  background-position: center;
+  background-size: cover;
+}
+.img-01-p1 {
+  background-image: url('@/assets/image/gallery-header.webp');
+}
+.img-02-p1 {
+  background-image: url('@/assets/image/gallery-header.webp');
+}
+.img-03-p1 {
+  background-image: url('@/assets/image/gallery-header.webp');
+}
+.img-04-p1 {
+  background-image: url('@/assets/image/gallery-header.webp');
+}
 .section-about-p2 {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
 }
 .cards-business-values {
   display: flex;
