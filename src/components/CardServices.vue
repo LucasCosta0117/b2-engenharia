@@ -1,12 +1,13 @@
 <template>
-  <v-card class="card-services-container">
+  <v-card class="card-services-container" elevation="3">
     <div class="card-services-text">
       <h3>{{ title }}</h3>
       <p class="section-paragraph">
         {{ paragraph }}
       </p>
     </div>
-    <div class="card-services-img" :style="{ backgroundImage: `url(${require(`@/assets/image/${imageName}`)})` }">
+    <div class="card-services-img" :style="{ backgroundImage: `url(${require(`@/assets/image/card_serv/${imageName}`)})` }">
+      <div class="overlay"></div>
     </div>
   </v-card>
 </template>
@@ -61,6 +62,16 @@ export default {
   background-size: cover;
   max-width: 100%;
   height: 12rem;
+  transition: transform 2s ease;
+}
+.card-services-img .overlay {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+.card-services-container:hover .card-services-img {
+  transform: scale(1.1);
 }
 
 /**
