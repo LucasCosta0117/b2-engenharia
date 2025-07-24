@@ -80,6 +80,9 @@
         <div class="cards-releases">
           <CardGallery v-for="i in 2" :key="i"></CardGallery>
         </div>
+        <div class="section-paragraph">
+          <p>Acesse a <router-link to="/gallery" class="gallery-link">Galeria de Empreendimentos</router-link> para conferir todos os nossos projetos!</p>
+        </div>
       </section>
     </div>
   </div>
@@ -300,6 +303,11 @@ export default ({
   flex-direction: column;
   gap: 0.5rem;
   margin: 0rem 1rem;
+}
+.gallery-link {
+  color: rgb(113, 10, 10);
+  font-weight: 600;
+  text-decoration: none;
 }
 
 /**
