@@ -1,6 +1,6 @@
 <template>
   <HeaderPage :header-image="headerImage" :header-title="headerTitle" />
-  <div class="about-container">
+  <v-container class="about-container">
     <div class="section-about-p1">
       <SectionTitle :main-title="sectionTitle.mainTitle" :sub-title="sectionTitle.subTitle" />
       <div class="section-paragraph">
@@ -12,7 +12,7 @@
         </p>
       </div>
       <div>
-        <v-row class="ml-2 mr-2">
+        <v-row class="ml-0 mr-0">
           <v-col cols="3" class="pa-1">
             <div class="section-imgs-p1 img-01-p1"></div>
           </v-col>
@@ -20,7 +20,7 @@
             <div class="section-imgs-p1 img-02-p1"></div>
           </v-col>
         </v-row>
-        <v-row class="ml-2 mr-2">
+        <v-row class="ml-0 mr-0">
           <v-col cols="5" class="pa-1">
             <div class="section-imgs-p1 img-03-p1"></div>
           </v-col>
@@ -33,12 +33,16 @@
     <div class="section-about-p2">
       <SectionTitle :main-title="'Nossos Valores'" :sub-title="''" />
       <div class="cards-business-values">
-        <CardIcon v-for="val in listBusinessValues" :key="val.title" :card-title="val.title" :card-text="val.text"
-          :card-icon="val.icon" />
+        <CardIcon v-for="val in listBusinessValues" :key="val.title"
+          class="card-business-item"
+          :card-title="val.title" 
+          :card-text="val.text"
+          :card-icon="val.icon"
+        />
       </div>
     </div>
     <div class="section-about-p3">
-      <div>
+      <div class="section-p3-mission">
         <SectionTitle :main-title="'Missão'" :sub-title="''" />
         <div class="section-paragraph">
           <p>
@@ -47,7 +51,7 @@
           </p>
         </div>
       </div>
-      <div>
+      <div class="section-p3-vision">
         <SectionTitle :main-title="'Visão'" :sub-title="''" />
         <div class="section-paragraph">
           <p>
@@ -107,7 +111,7 @@
         </p>
       </div>
     </div>
-  </div>
+  </v-container>
 </template>
 <script>
 import CardIcon from '@/components/CardIcon.vue';
@@ -239,7 +243,14 @@ export default {
  * Vuetify 'sm' Break Point
  */
 @media (min-width: 600px) {
-
+  .cards-business-values {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .card-business-item {
+    width: 48%;
+  }
 }
 /**
  * Dispositivos médios
@@ -251,6 +262,22 @@ export default {
   }
   .section-paragraph {
     font-size: 1.1rem;
+  }
+  .section-about-p3 {
+    background-image: url('@/assets/image/project-bg.webp');
+    background-size: cover;
+    background-position: bottom;
+    flex-direction: row;
+    padding: 8rem 2rem;
+  }
+  .section-p3-mission {
+    width: 50%;
+  }
+  .section-p3-vision {
+    width: 50%;
+  }
+  .section-about-p5 {
+    margin-bottom: 3rem;
   }
 }
 
