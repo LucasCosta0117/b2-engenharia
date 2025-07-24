@@ -398,6 +398,13 @@ export default ({
   .home-section {
     max-width: 1200px;
   }
+  .home-section-company {
+    padding-top: 5rem;
+    padding-bottom: 8rem;
+  }
+  .home-section-services {
+    padding: 6rem 0rem;
+  }
   .section-company-img {
     height: 17rem;
   }
