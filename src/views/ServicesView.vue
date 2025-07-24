@@ -1,6 +1,6 @@
 <template>
   <HeaderPage :header-image="headerImage" :header-title="headerTitle" />
-  <div class="services-container">
+  <v-container class="services-container">
     <div class="section-services-p1">
       <SectionTitle :main-title="'O Que Fazemos'" :sub-title="'Da concepção à entrega'" />
       <div class="section-paragraph">
@@ -15,10 +15,14 @@
     </div>
     <div class="section-services-p2">
       <SectionTitle :main-title="'Áreas de Atuação'" :sub-title="''" />
-      <CardServices v-for="serv of listServices" :key="serv.title" :title="serv.title" :paragraph="serv.paragraph"
-        :imageName="serv.imageName" />
+      <CardServices v-for="serv of listServices" :key="serv.title"
+        class="card-service-item"
+        :title="serv.title" 
+        :paragraph="serv.paragraph"
+        :imageName="serv.imageName"
+      />
     </div>
-  </div>
+  </v-container>
 </template>
 <script>
 import CardServices from '@/components/CardServices.vue';
@@ -63,7 +67,7 @@ export default {
       },
       {
         title: 'Retrofit de Edificações',
-        text: 'Especialistas em modernização de imóveis, realizamos projetos de retrofit que promovem a revitalização estética, funcional e normativa de edifícios. O serviço visa valorizar o patrimônio, aumentar a eficiência operacional e garantir conformidade com as exigências legais, com mínima interferência na rotina dos usuários e uso racional dos recursos.',
+        paragraph: 'Especialistas em modernização de imóveis, realizamos projetos de retrofit que promovem a revitalização estética, funcional e normativa de edifícios. O serviço visa valorizar o patrimônio, aumentar a eficiência operacional e garantir conformidade com as exigências legais, com mínima interferência na rotina dos usuários e uso racional dos recursos.',
         imageName: 'retrofit.webp'
       },
       {
@@ -85,7 +89,7 @@ export default {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  margin: 4rem 1rem;
+  padding: 2rem 1rem;
 }
 .section-services-p1 {
   display: flex;
@@ -120,9 +124,17 @@ export default {
 @media (min-width: 960px) {
   .services-container {
     max-width: 1000px;
+    gap: 3rem;
+    margin-bottom: 3rem;
   }
   .section-paragraph {
     font-size: 1.1rem;
+  }
+  .card-service-item:nth-child(odd) {
+    flex-direction: row-reverse;
+  }
+  .section-services-p2 {
+    gap: 1.5rem;
   }
 }
 

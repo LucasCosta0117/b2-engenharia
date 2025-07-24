@@ -67,7 +67,7 @@ export default {
 .card-services-img .overlay {
   height: 100%;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.4);
   z-index: 1;
 }
 .card-services-container:hover .card-services-img {
@@ -86,7 +86,20 @@ export default {
  * Vuetify 'md' Break Point
  */
 @media (min-width: 960px) {
-
+  .card-services-container {
+    flex-direction: row;
+    height: 15rem;
+  }
+  .card-services-text {
+    width: 60%;
+  }
+  .card-services-img {
+    width: 40%;
+    height: inherit;
+  }
+  .card-services-container:hover .card-services-img {
+    transform: scale(1.05);
+  }
 }
 
 /**
