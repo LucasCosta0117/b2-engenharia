@@ -1,6 +1,6 @@
 <template>
   <HeaderPage :header-image="headerImage" :header-title="headerTitle" />
-  <div class="partners-container">
+  <v-container class="partners-container">
     <div class="section-partners-p1">
       <SectionTitle class="section-title" :main-title="'Nossos Parceiros'" :sub-title="'Confiança mútua'" />
       <div class="section-paragraph">
@@ -12,11 +12,15 @@
         </p>
       </div>
       <div class="section-imgs-p1">
-        <div class="section-img" v-for="img in sectionImgs" :key="img" :style="{ backgroundImage: `url(${img})` }">
+        <div class="section-img" v-for="img in sectionImgs" :key="img.alt" 
+          :style="{ backgroundImage: `url(${img.path})` }" 
+          :title="img.alt"
+          :alt="img.alt"
+        >
         </div>
       </div>
     </div>
-  </div>
+  </v-container>
 </template>
 <script>
 import HeaderPage from '@/components/HeaderPage.vue';
@@ -32,11 +36,26 @@ export default {
     headerImage: require("@/assets/image/partners-header.webp"),
     headerTitle: 'Parceiros comerciais',
     sectionImgs: [
-      require('@/assets/image/partner-mh2.png'),
-      require('@/assets/image/partner-vernace.png'),
-      require('@/assets/image/partner-banneg.png'),
-      require('@/assets/image/partner-camara.png'),
-      require('@/assets/image/partner-embasa.png'),
+      {
+        path: require('@/assets/image/partner-mh2.png'),
+        alt: 'MH2 Soluções em Engenharia',
+      },
+      {
+        path: require('@/assets/image/partner-vernace.png'),
+        alt: 'Vernace Capital Partners',
+      },
+      {
+        path: require('@/assets/image/partner-banneg.png'),
+        alt: 'Banneg Banco de Negócios',
+      },
+      {
+        path: require('@/assets/image/partner-camara.png'),
+        alt: 'Camara IA',
+      },
+      {
+        path: require('@/assets/image/partner-embasa.png'),
+        alt: 'Embasa',
+      }
     ]
   }),
 }
@@ -45,12 +64,12 @@ export default {
 .partners-container {
   display: flex;
   flex-direction: column;
-  margin: 2rem 1rem;
+  padding: 2rem 1rem;
 }
 .section-partners-p1 {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 3rem;
 }
 .section-paragraph {
   display: flex;
@@ -66,6 +85,7 @@ export default {
   gap: 2rem;
 }
 .section-img {
+  width: 100%;
   height: 5rem;
   background-size: contain;
   background-position: center;
@@ -76,7 +96,19 @@ export default {
  * Vuetify 'sm' Break Point
  */
 @media (min-width: 600px) {
-
+  .section-imgs-p1 {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+  .section-img {
+    width: 40%;
+    transition: transform 1s ease;
+  }
+  .section-img:hover {
+    transform: scale(1.1);
+  }
 }
 /**
  * Dispositivos médios
@@ -88,6 +120,12 @@ export default {
   }
   .section-paragraph {
     font-size: 1.1rem;
+  }
+  .section-img {
+    width: 30%;
+  }
+  .section-partners-p1 { 
+    margin-bottom: 2rem;
   }
 }
 
