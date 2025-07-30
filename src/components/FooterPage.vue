@@ -6,11 +6,11 @@
           <img :src="logoComplete" alt="Logo B2 Engenharia e Construção" class="footer-logo"/>
           <div>
             <v-icon size="18" icon="mdi-phone-dial"></v-icon>
-            <span class="text-caption"> +55 71 99728-4770</span>
+            <span class="text-caption"> +55 71 99229-6560</span>
           </div>
           <div>
             <v-icon size="18" icon="mdi-email"></v-icon>
-            <span class="text-caption"> contato@b2engenhariaeconstrucao.com.br</span>
+            <span class="text-caption"> financeiro@engenhariab2.com</span>
           </div>
           <div>
             <v-icon size="18" icon="mdi-map-marker"></v-icon>
@@ -44,7 +44,7 @@ export default {
     SocialMidiaList
   },
   data:() => ({
-    logoComplete: require('@/assets/logo/logob2-c.png'),
+    logoComplete: require('@/assets/logo/logob2-cv.png'),
     portfolioLink: 'https://github.com/LucasCosta0117'
   })
 }
@@ -55,7 +55,8 @@ export default {
   background: linear-gradient(145deg, rgba(0, 0, 0, 1) 0%, rgba(110, 13, 13, 1) 100%);
 }
 .footer-logo {
-  height: 3.5rem;
+  height: 7rem;
+  margin-left: 25%;
 }
 .footer-copyright {
   display: flex;
@@ -88,6 +89,9 @@ export default {
     text-decoration: none;
     color: rgb(160, 160, 160);
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+  }
+  .footer-logo {
+    margin: 0rem;
   }
 }
 /**

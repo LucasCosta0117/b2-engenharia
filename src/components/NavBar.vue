@@ -10,11 +10,8 @@
       class="d-md-none text-white"
     />
 
-    <router-link :to="linkHome.to" class="ml-8 d-md-none">
+    <router-link :to="linkHome.to" class="ml-8 mr-16">
       <img :src="logoSimple" alt="Logo B2 Engenharia e Construção" class="navbar-logo-s"/>
-    </router-link>
-    <router-link :to="linkHome.to" class="ml-8 d-none d-md-flex">
-      <img :src="logoComplete" alt="Logo B2 Engenharia e Construção" class="navbar-logo-c mr-16"/>
     </router-link>
     
     <v-btn
@@ -79,7 +76,6 @@ const drawer = ref(false)
 const scrolled = ref(false)
 
 const logoSimple = require('@/assets/logo/logob2-s.png')
-const logoComplete = require('@/assets/logo/logob2-c.png')
 
 const linksNavbar = [
   { to: '/', label: 'Início' },
@@ -131,15 +127,9 @@ onUnmounted(() => {
 .navbar-logo-s {
   max-width: 2.5rem;
 }
-.navbar-logo-c {
-  max-width: 10rem;
-}
-.btn-contact {
-  border: solid 1px white;
-  background-color: rgba(245, 150, 8, 1);
-}
 .btn-contact:hover {
   scale: 0.98;
+  font-weight: 800;
 }
 .btn-nav-bar:hover {
   border-top: solid 2px rgba(245, 150, 8, 1);
