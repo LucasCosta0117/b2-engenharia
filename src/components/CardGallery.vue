@@ -105,6 +105,7 @@ export default {
   font-weight: 400;
   font-size: 1.25rem;
   text-transform: uppercase;
+  text-shadow: black 0.5px 1px 3px;
   writing-mode: sideways-lr;
   padding: 1rem;
   margin-bottom: 1rem;
