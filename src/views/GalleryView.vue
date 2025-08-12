@@ -7,7 +7,13 @@
     <SectionTitle class="section-title" :main-title="sectionTitle.mainTitle"
       :sub-title="sectionTitle.subTitle" />
     <div class="card-gallery-container">
-      <CardGallery v-for="i in 8" :key="i"></CardGallery>
+      <CardGallery 
+        v-for="card of cardsGalleryList" :key="card.title"
+        :title="card.title"
+        :thumb-url="card.thumbUrl"
+        :feature="card.feature"
+        :website="card.website"
+      />
     </div>
   </v-container>
 </template>
@@ -29,7 +35,31 @@ export default {
     sectionTitle: {
       mainTitle: 'Galeria',
       subTitle: 'Lançamentos e Entregas'
-    }
+    },
+    cardsGalleryList: [
+      {
+        title: 'Ilhéus Select',
+        thumbUrl: require('@/assets/image/card_gallery/ilheus-img.webp'),
+        feature: {
+          bedrooms: '2, 3 e 4 suítes',
+          area: '50m²',
+          city: 'Ilhéus - BA',
+          launch: '2025'
+        },
+        website: 'https://www.ilheusselect.com.br/'
+      },
+      {
+        title: 'Mamanuca',
+        thumbUrl: require('@/assets/image/card_gallery/mamanuca-img.webp'),
+        feature: {
+          bedrooms: '1 quarto', 
+          area: '35m²',
+          city: 'Praia do Forte - BA',
+          launch: '2026'
+        },
+        website: 'https://vivermamanuca.com.br/'
+      }
+    ]
   }),
 }
 </script>
@@ -55,7 +85,10 @@ export default {
   .card-gallery-container {
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 2rem;
+    gap: 1rem;
+  }
+  .card-gallery-container .card-container{
+    width: 47.5%;
   }
 }
 
@@ -64,9 +97,7 @@ export default {
  * Vuetify 'md' Break Point
  */
 @media (min-width: 960px) {
-  .card-gallery-container {
-    gap: 3rem;
-  }
+
 }
 
 /**

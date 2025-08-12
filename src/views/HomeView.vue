@@ -78,7 +78,13 @@
         <SectionTitle class="section-title" :main-title="sectionsTitles['releases'].mainTitle"
           :sub-title="sectionsTitles['releases'].subTitle" />
         <div class="cards-releases">
-          <CardGallery v-for="i in 2" :key="i"></CardGallery>
+          <CardGallery 
+            v-for="card of cardsGalleryReleases" :key="card.title"
+            :title="card.title"
+            :thumb-url="card.thumbUrl"
+            :feature="card.feature"
+            :website="card.website"
+          />
         </div>
         <div class="section-paragraph">
           <p>Acesse a <router-link to="/gallery" class="gallery-link">Galeria de Empreendimentos</router-link> para conferir todos os nossos projetos!</p>
@@ -183,6 +189,30 @@ export default ({
       {
         title: 'Galpões Logísticos',
         text: 'Projetos e construção de centros logísticos otimizados, com alto desempenho operacional e adaptabilidade às demandas do setor.',
+      }
+    ],
+    cardsGalleryReleases: [
+      {
+        title: 'Ilhéus Select',
+        thumbUrl: require('@/assets/image/card_gallery/ilheus-img.webp'),
+        feature: {
+          bedrooms: '2, 3 e 4 suítes',
+          area: '50m²',
+          city: 'Ilhéus - BA',
+          launch: '2025'
+        },
+        website: 'https://www.ilheusselect.com.br/'
+      },
+      {
+        title: 'Mamanuca',
+        thumbUrl: require('@/assets/image/card_gallery/mamanuca-img.webp'),
+        feature: {
+          bedrooms: '1 quarto', 
+          area: '35m²',
+          city: 'Praia do Forte - BA',
+          launch: '2026'
+        },
+        website: 'https://vivermamanuca.com.br/'
       }
     ]
   }),
@@ -339,6 +369,9 @@ export default ({
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
+  }
+  .cards-releases .card-container{
+    width: 48%;
   }
   .home-section-services {
     padding-bottom: 5rem;
