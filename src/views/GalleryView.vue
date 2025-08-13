@@ -44,7 +44,7 @@ export default {
           bedrooms: '2, 3 e 4 suítes',
           area: '50m²',
           city: 'Ilhéus - BA',
-          launch: '2025'
+          launch: '2026'
         },
         website: 'https://www.ilheusselect.com.br/'
       },
@@ -58,6 +58,50 @@ export default {
           launch: '2026'
         },
         website: 'https://vivermamanuca.com.br/'
+      },
+      {
+        title: 'Recanto das Bromélias',
+        thumbUrl: require('@/assets/image/card_gallery/bromelia.webp'),
+        feature: {
+          bedrooms: '2 quartos', 
+          area: '50m²',
+          city: 'Imbassaí - BA',
+          launch: '2023'
+        },
+        website: ''
+      },
+      {
+        title: 'Chácara do Açu',
+        thumbUrl: require('@/assets/image/card_gallery/chacara-do-acu.webp'),
+        feature: {
+          bedrooms: '2 quartos', 
+          area: '50m²',
+          city: 'Açu da Tôrre - BA',
+          launch: '2022'
+        },
+        website: ''
+      },
+      {
+        title: 'Costa do Mar',
+        thumbUrl: require('@/assets/image/card_gallery/costa-do-mar.webp'),
+        feature: {
+          bedrooms: '1 quarto', 
+          area: '50m²',
+          city: 'Praia do Forte - BA',
+          launch: '2021'
+        },
+        website: ''
+      },
+      {
+        title: 'Fort de Ville',
+        thumbUrl: require('@/assets/image/card_gallery/fort-de-ville.webp'),
+        feature: {
+          bedrooms: '2 quartos', 
+          area: '50m²',
+          city: 'Praia do Forte - BA',
+          launch: '2021'
+        },
+        website: ''
       }
     ]
   }),

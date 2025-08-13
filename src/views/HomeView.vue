@@ -199,7 +199,7 @@ export default ({
           bedrooms: '2, 3 e 4 suítes',
           area: '50m²',
           city: 'Ilhéus - BA',
-          launch: '2025'
+          launch: '2026'
         },
         website: 'https://www.ilheusselect.com.br/'
       },
