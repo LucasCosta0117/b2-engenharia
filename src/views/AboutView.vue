@@ -193,16 +193,17 @@ export default {
   background-size: cover;
 }
 .img-01-p1 {
-  background-image: url('@/assets/image/gallery-header.webp');
+  background-image: url('@/assets/image/about-img-1.webp');
+  background-position: left;
 }
 .img-02-p1 {
-  background-image: url('@/assets/image/gallery-header.webp');
+  background-image: url('@/assets/image/about-img-2.webp');
 }
 .img-03-p1 {
-  background-image: url('@/assets/image/gallery-header.webp');
+  background-image: url('@/assets/image/about-img-3.webp');
 }
 .img-04-p1 {
-  background-image: url('@/assets/image/gallery-header.webp');
+  background-image: url('@/assets/image/about-img-4.webp');
 }
 .section-about-p2 {
   display: flex;
@@ -262,6 +263,9 @@ export default {
   }
   .section-paragraph {
     font-size: 1.1rem;
+  }
+  .section-imgs-p1 {
+    height: 15rem;
   }
   .section-about-p3 {
     background-image: url('@/assets/image/project-bg.webp');
