@@ -33,6 +33,23 @@
         </p>
       </div>
     </section>
+    <section class="home-section home-section-ademi">
+      <div>
+        <div class="section-ademi-title">
+          <v-icon class="ademi-icon" icon="mdi mdi-trophy" />
+          Empresa Revelação Ademi-BA 2025
+        </div>
+        <div class="section-paragraph">
+          <p>
+            A B2 Engenharia & Construção foi Empresa Revelação no 28º Prêmio Ademi-BA, o maior reconhecimento do mercado
+            imobiliário baiano. O evento reune os grandes nomes e projetos que estão transformando o mercado. Ao lado de
+            outras empresas de excelência, a B2 Engenharia & Construção foi reconhecida pelo seu compromisso com
+            qualidade, inovação e solidez em cada obra.
+          </p>
+        </div>
+      </div>
+      <div class="section-ademi-img"></div>
+    </section>
     <div class="bg-rg-red">
       <section class="home-section home-section-services">
         <SectionTitle class="section-title" :main-title="sectionsTitles['services'].mainTitle"
@@ -78,16 +95,12 @@
         <SectionTitle class="section-title" :main-title="sectionsTitles['releases'].mainTitle"
           :sub-title="sectionsTitles['releases'].subTitle" />
         <div class="cards-releases">
-          <CardGallery 
-            v-for="card of cardsGalleryReleases" :key="card.title"
-            :title="card.title"
-            :thumb-url="card.thumbUrl"
-            :feature="card.feature"
-            :website="card.website"
-          />
+          <CardGallery v-for="card of cardsGalleryReleases" :key="card.title" :title="card.title"
+            :thumb-url="card.thumbUrl" :feature="card.feature" :website="card.website" />
         </div>
         <div class="section-paragraph">
-          <p>Acesse a <router-link to="/gallery" class="gallery-link">Galeria de Empreendimentos</router-link> para conferir todos os nossos projetos!</p>
+          <p>Acesse a <router-link to="/gallery" class="gallery-link">Galeria de Empreendimentos</router-link> para
+            conferir todos os nossos projetos!</p>
         </div>
       </section>
     </div>
@@ -275,6 +288,36 @@ export default ({
   margin: 0rem 1rem;
   border-radius: 0.5rem;
 }
+.home-section-ademi {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.section-ademi-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0rem 2rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+.ademi-icon {
+  color: goldenrod;
+  font-size: 1.2rem;
+}
+.section-ademi-img {
+  background-image: url("@/assets/image/ademi28.webp");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  max-width: 100%;
+  height: 10rem;
+  margin: 0rem 1rem;
+  border-radius: 0.5rem;
+}
 .bg-rg-red {
   background: radial-gradient(circle, rgb(80, 10, 10) 0%, rgba(0, 0, 0, 1) 100%);
 }
@@ -357,6 +400,9 @@ export default ({
   .section-company-img {
     height: 20rem;
   }
+  .section-ademi-img {
+    height: 18rem;
+  }
   .cards-services {
     flex-direction: row;
     flex-wrap: wrap;
@@ -405,12 +451,24 @@ export default ({
   }
   .home-section-company {
     flex-direction: row;
+    padding-top: 2rem;
+    padding-bottom: 3rem;
   }
   .section-company-title {
     min-width: 40%;
   }
   .section-company-img {
     height: 22rem;
+  }
+  .home-section-ademi {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    padding-top: 3rem;
+    padding-bottom: 5rem;
+  }
+  .section-ademi-img {
+    width: 150%;
+    height: 15rem;
   }
   .home-section-compliance {
     gap: 2rem;
@@ -441,7 +499,6 @@ export default ({
   }
   .home-section-company {
     padding-top: 5rem;
-    padding-bottom: 8rem;
   }
   .home-section-services {
     padding: 6rem 0rem;
