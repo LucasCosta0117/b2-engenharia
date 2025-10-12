@@ -41,6 +41,11 @@ export default {
   display: flex;
   flex-direction: column;
   height: 10rem;
+  transition: scale 0.3s ease;
+}
+.card-item-container:hover {
+  box-shadow: 2px 2px 5px lightgray;
+  scale: 0.98;
 }
 .card-item-dash {
   margin-bottom: 1rem;
