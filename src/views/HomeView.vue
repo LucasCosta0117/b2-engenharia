@@ -227,8 +227,14 @@ export default ({
         },
         website: 'https://www.ilheusselect.com.br/',
         imgs: [
-          require('@/assets/image/card_gallery/ilheus-img.webp'),
-          require('@/assets/image/card_gallery/ilheus-img.webp'),
+          require('@/assets/image/modal-imgs/ilheus-select/select-1.webp'),
+          require('@/assets/image/modal-imgs/ilheus-select/select-2.webp'),
+          require('@/assets/image/modal-imgs/ilheus-select/select-3.webp'),
+          require('@/assets/image/modal-imgs/ilheus-select/select-4.webp'),
+          require('@/assets/image/modal-imgs/ilheus-select/select-5.webp'),
+          require('@/assets/image/modal-imgs/ilheus-select/select-6.webp'),
+          require('@/assets/image/modal-imgs/ilheus-select/select-7.webp'),
+          require('@/assets/image/modal-imgs/ilheus-select/select-8.webp'),
           require('@/assets/image/card_gallery/ilheus-img.webp')
         ]
       },
@@ -243,9 +249,11 @@ export default ({
         },
         website: 'https://vivermamanuca.com.br/',
         imgs: [
-          require('@/assets/image/card_gallery/ilheus-img.webp'),
-          require('@/assets/image/card_gallery/ilheus-img.webp'),
-          require('@/assets/image/card_gallery/ilheus-img.webp')
+          require('@/assets/image/modal-imgs/mamanuca/mamanuca-1.webp'),
+          require('@/assets/image/modal-imgs/mamanuca/mamanuca-2.webp'),
+          require('@/assets/image/modal-imgs/mamanuca/mamanuca-3.webp'),
+          require('@/assets/image/modal-imgs/mamanuca/mamanuca-4.webp'),
+          require('@/assets/image/card_gallery/mamanuca-img.webp')
         ]
       }
     ],

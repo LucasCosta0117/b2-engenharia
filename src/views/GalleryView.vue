@@ -55,8 +55,14 @@ export default {
         },
         website: 'https://www.ilheusselect.com.br/',
         imgs: [
-          require('@/assets/image/card_gallery/ilheus-img.webp'),
-          require('@/assets/image/card_gallery/ilheus-img.webp'),
+          require('@/assets/image/modal-imgs/ilheus-select/select-1.webp'),
+          require('@/assets/image/modal-imgs/ilheus-select/select-2.webp'),
+          require('@/assets/image/modal-imgs/ilheus-select/select-3.webp'),
+          require('@/assets/image/modal-imgs/ilheus-select/select-4.webp'),
+          require('@/assets/image/modal-imgs/ilheus-select/select-5.webp'),
+          require('@/assets/image/modal-imgs/ilheus-select/select-6.webp'),
+          require('@/assets/image/modal-imgs/ilheus-select/select-7.webp'),
+          require('@/assets/image/modal-imgs/ilheus-select/select-8.webp'),
           require('@/assets/image/card_gallery/ilheus-img.webp')
         ]
       },
@@ -71,9 +77,11 @@ export default {
         },
         website: 'https://vivermamanuca.com.br/',
         imgs: [
-          require('@/assets/image/card_gallery/ilheus-img.webp'),
-          require('@/assets/image/card_gallery/ilheus-img.webp'),
-          require('@/assets/image/card_gallery/ilheus-img.webp')
+          require('@/assets/image/modal-imgs/mamanuca/mamanuca-1.webp'),
+          require('@/assets/image/modal-imgs/mamanuca/mamanuca-2.webp'),
+          require('@/assets/image/modal-imgs/mamanuca/mamanuca-3.webp'),
+          require('@/assets/image/modal-imgs/mamanuca/mamanuca-4.webp'),
+          require('@/assets/image/card_gallery/mamanuca-img.webp')
         ]
       },
       {
@@ -87,9 +95,14 @@ export default {
         },
         website: '',
         imgs: [
-          require('@/assets/image/card_gallery/ilheus-img.webp'),
-          require('@/assets/image/card_gallery/ilheus-img.webp'),
-          require('@/assets/image/card_gallery/ilheus-img.webp')
+          require('@/assets/image/modal-imgs/bromelias/Recanto-da-Bromelias-01.webp'),
+          require('@/assets/image/modal-imgs/bromelias/Recanto-da-Bromelias-02.webp'),
+          require('@/assets/image/modal-imgs/bromelias/Recanto-da-Bromelias-03.webp'),
+          require('@/assets/image/modal-imgs/bromelias/Recanto-da-Bromelias-04.webp'),
+          require('@/assets/image/modal-imgs/bromelias/Recanto-da-Bromelias-05.webp'),
+          require('@/assets/image/modal-imgs/bromelias/Recanto-da-Bromelias-06.webp'),
+          require('@/assets/image/modal-imgs/bromelias/Recanto-da-Bromelias-07.webp'),
+          require('@/assets/image/modal-imgs/bromelias/Recanto-da-Bromelias-08.webp'),
         ]
       },
       {
@@ -103,9 +116,8 @@ export default {
         },
         website: '',
         imgs: [
-          require('@/assets/image/card_gallery/ilheus-img.webp'),
-          require('@/assets/image/card_gallery/ilheus-img.webp'),
-          require('@/assets/image/card_gallery/ilheus-img.webp')
+          require('@/assets/image/modal-imgs/chacara-acu/Chacara-do-Acu-1.webp'),
+          require('@/assets/image/modal-imgs/chacara-acu/Chacara-do-Acu-2.webp'),
         ]
       },
       {
@@ -119,9 +131,9 @@ export default {
         },
         website: '',
         imgs: [
-          require('@/assets/image/card_gallery/ilheus-img.webp'),
-          require('@/assets/image/card_gallery/ilheus-img.webp'),
-          require('@/assets/image/card_gallery/ilheus-img.webp')
+          require('@/assets/image/modal-imgs/costa-mar/Costa-do-Mar-1.webp'),
+          require('@/assets/image/modal-imgs/costa-mar/Costa-do-Mar-2.webp'),
+          require('@/assets/image/modal-imgs/costa-mar/Costa-do-Mar-3.webp'),
         ]
       },
       {
@@ -135,9 +147,11 @@ export default {
         },
         website: '',
         imgs: [
-          require('@/assets/image/card_gallery/ilheus-img.webp'),
-          require('@/assets/image/card_gallery/ilheus-img.webp'),
-          require('@/assets/image/card_gallery/ilheus-img.webp')
+          require('@/assets/image/modal-imgs/fort-ville/Fort-de-Ville-1.webp'),
+          require('@/assets/image/modal-imgs/fort-ville/Fort-de-Ville-2.webp'),
+          require('@/assets/image/modal-imgs/fort-ville/Fort-de-Ville-3.webp'),
+          require('@/assets/image/modal-imgs/fort-ville/Fort-de-Ville-4.webp'),
+          require('@/assets/image/modal-imgs/fort-ville/Fort-de-Ville-5.webp'),
         ]
       },
     ],
