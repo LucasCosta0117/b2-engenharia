@@ -7,27 +7,34 @@
     <SectionTitle class="section-title" :main-title="sectionTitle.mainTitle"
       :sub-title="sectionTitle.subTitle" />
     <div class="card-gallery-container">
-      <CardGallery 
+      <CardGallery
         v-for="card of cardsGalleryList" :key="card.title"
         :title="card.title"
         :thumb-url="card.thumbUrl"
         :feature="card.feature"
         :website="card.website"
+        @click = "openModal(card)"
       />
     </div>
+    <ModalGallery
+      v-model:show-modal="showModal"
+      :project="selectedProject"
+    />
   </v-container>
 </template>
 <script>
 import HeaderPage from '@/components/HeaderPage.vue';
 import CardGallery from '@/components/CardGallery.vue';
 import SectionTitle from '@/components/SectionTitle.vue';
+import ModalGallery from '@/components/ModalGallery.vue';
 
 export default {
   name: 'GalleryView',
   components: {
     HeaderPage,
     CardGallery,
-    SectionTitle
+    SectionTitle,
+    ModalGallery
   },
   data: () => ({
     headerImage: require("@/assets/image/gallery-header.webp"),
@@ -46,7 +53,12 @@ export default {
           city: 'Ilhéus - BA',
           launch: '2026'
         },
-        website: 'https://www.ilheusselect.com.br/'
+        website: 'https://www.ilheusselect.com.br/',
+        imgs: [
+          require('@/assets/image/card_gallery/ilheus-img.webp'),
+          require('@/assets/image/card_gallery/ilheus-img.webp'),
+          require('@/assets/image/card_gallery/ilheus-img.webp')
+        ]
       },
       {
         title: 'Mamanuca',
@@ -57,7 +69,12 @@ export default {
           city: 'Praia do Forte - BA',
           launch: '2026'
         },
-        website: 'https://vivermamanuca.com.br/'
+        website: 'https://vivermamanuca.com.br/',
+        imgs: [
+          require('@/assets/image/card_gallery/ilheus-img.webp'),
+          require('@/assets/image/card_gallery/ilheus-img.webp'),
+          require('@/assets/image/card_gallery/ilheus-img.webp')
+        ]
       },
       {
         title: 'Recanto das Bromélias',
@@ -68,7 +85,12 @@ export default {
           city: 'Imbassaí - BA',
           launch: '2023'
         },
-        website: ''
+        website: '',
+        imgs: [
+          require('@/assets/image/card_gallery/ilheus-img.webp'),
+          require('@/assets/image/card_gallery/ilheus-img.webp'),
+          require('@/assets/image/card_gallery/ilheus-img.webp')
+        ]
       },
       {
         title: 'Chácara do Açu',
@@ -79,7 +101,12 @@ export default {
           city: 'Açu da Tôrre - BA',
           launch: '2022'
         },
-        website: ''
+        website: '',
+        imgs: [
+          require('@/assets/image/card_gallery/ilheus-img.webp'),
+          require('@/assets/image/card_gallery/ilheus-img.webp'),
+          require('@/assets/image/card_gallery/ilheus-img.webp')
+        ]
       },
       {
         title: 'Costa do Mar',
@@ -90,7 +117,12 @@ export default {
           city: 'Praia do Forte - BA',
           launch: '2021'
         },
-        website: ''
+        website: '',
+        imgs: [
+          require('@/assets/image/card_gallery/ilheus-img.webp'),
+          require('@/assets/image/card_gallery/ilheus-img.webp'),
+          require('@/assets/image/card_gallery/ilheus-img.webp')
+        ]
       },
       {
         title: 'Fort de Ville',
@@ -101,10 +133,23 @@ export default {
           city: 'Praia do Forte - BA',
           launch: '2021'
         },
-        website: ''
-      }
-    ]
+        website: '',
+        imgs: [
+          require('@/assets/image/card_gallery/ilheus-img.webp'),
+          require('@/assets/image/card_gallery/ilheus-img.webp'),
+          require('@/assets/image/card_gallery/ilheus-img.webp')
+        ]
+      },
+    ],
+    showModal:false,
+    selectedProject: {}
   }),
+  methods: {
+    openModal(proj) {
+      this.showModal = true;
+      this.selectedProject = proj;
+    }
+  }
 }
 </script>
 <style scoped>
