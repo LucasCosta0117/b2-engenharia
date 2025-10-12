@@ -95,8 +95,17 @@
         <SectionTitle class="section-title" :main-title="sectionsTitles['releases'].mainTitle"
           :sub-title="sectionsTitles['releases'].subTitle" />
         <div class="cards-releases">
-          <CardGallery v-for="card of cardsGalleryReleases" :key="card.title" :title="card.title"
-            :thumb-url="card.thumbUrl" :feature="card.feature" :website="card.website" />
+          <CardGallery v-for="card of cardsGalleryReleases" :key="card.title"
+            :title="card.title"
+            :thumb-url="card.thumbUrl" 
+            :feature="card.feature" 
+            :website="card.website"
+            @click = "openModal(card)"
+          />
+          <ModalGallery
+            v-model:show-modal="showModal"
+            :project="selectedProject"
+          />
         </div>
         <div class="section-paragraph">
           <p>Acesse a <router-link to="/gallery" class="gallery-link">Galeria de Empreendimentos</router-link> para
@@ -116,6 +125,7 @@ import CardGallery from '@/components/CardGallery.vue';
 import CardItem from '@/components/CardItem.vue';
 import ContactForm from '@/components/ContactForm.vue';
 import SectionTitle from '@/components/SectionTitle.vue';
+import ModalGallery from '@/components/ModalGallery.vue';
 
 /**
  * Página principal de apresentação do site.
@@ -126,7 +136,8 @@ export default ({
     CardGallery,
     CardItem,
     ContactForm,
-    SectionTitle
+    SectionTitle,
+    ModalGallery
   },
   data: () => ({
     images: [
@@ -214,7 +225,12 @@ export default ({
           city: 'Ilhéus - BA',
           launch: '2026'
         },
-        website: 'https://www.ilheusselect.com.br/'
+        website: 'https://www.ilheusselect.com.br/',
+        imgs: [
+          require('@/assets/image/card_gallery/ilheus-img.webp'),
+          require('@/assets/image/card_gallery/ilheus-img.webp'),
+          require('@/assets/image/card_gallery/ilheus-img.webp')
+        ]
       },
       {
         title: 'Mamanuca',
@@ -225,10 +241,23 @@ export default ({
           city: 'Praia do Forte - BA',
           launch: '2026'
         },
-        website: 'https://vivermamanuca.com.br/'
+        website: 'https://vivermamanuca.com.br/',
+        imgs: [
+          require('@/assets/image/card_gallery/ilheus-img.webp'),
+          require('@/assets/image/card_gallery/ilheus-img.webp'),
+          require('@/assets/image/card_gallery/ilheus-img.webp')
+        ]
       }
-    ]
+    ],
+    showModal: false,
+    selectedProject: {}
   }),
+  methods: {
+    openModal(proj) {
+      this.showModal = true;
+      this.selectedProject = proj;
+    }
+  }
 });
 </script>
 <style scoped>
