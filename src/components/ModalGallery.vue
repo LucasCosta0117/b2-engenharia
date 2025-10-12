@@ -12,7 +12,7 @@
         <v-carousel
           hide-delimiter-background
           show-arrows="hover"
-          height="280"
+          class="gallery-modal-carousel"
           v-if="project?.imgs && project.imgs.length"
         >
           <v-carousel-item
@@ -86,10 +86,26 @@ export default {
 </script>
 <style scoped>
 .gallery-modal-container {
-  max-width: 35rem;
-  height: 37rem;
+  width: 100%;
+  height: 32rem;
 }
 .gallery-modal-description {
   font-size: 0.875rem;
+}
+.gallery-modal-carousel {
+  height: 19rem !important;
+}
+/**
+ * Dispositivos médios
+ * Vuetify 'md' Break Point
+ */
+@media (min-width: 960px) {
+  .gallery-modal-container {
+    max-width: 65rem;
+    height: 60rem;
+  }
+  .gallery-modal-carousel {
+    height: 32rem !important;
+  }
 }
 </style>
