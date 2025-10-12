@@ -45,7 +45,7 @@ export default {
   },
   data:() => ({
     logoComplete: require('@/assets/logo/logob2-cv.png'),
-    portfolioLink: 'https://github.com/LucasCosta0117'
+    portfolioLink: 'https://lucascosta-dev.com.br'
   })
 }
 </script>
